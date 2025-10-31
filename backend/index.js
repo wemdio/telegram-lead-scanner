@@ -146,7 +146,12 @@ const corsOptions = {
     }
     
     const allowedOrigins = process.env.NODE_ENV === 'production' 
-      ? [process.env.CORS_ORIGIN, 'http://localhost:5173', 'http://localhost:5174']
+      ? [
+          process.env.CORS_ORIGIN, 
+          'https://wemdio-telegram-lead-scanner-63d0.twc1.net',
+          'http://localhost:5173', 
+          'http://localhost:5174'
+        ]
       : ['http://localhost:5173', 'http://localhost:5174'];
     
     console.log('🔧 CORS: Allowed origins:', allowedOrigins);
