@@ -134,7 +134,7 @@ app.use('/api/sheets', limiter);
 // No rate limiting for scanner status to allow frequent polling
 // app.use('/api/scanner', limiter);
 
-// CORS configuration
+// CORS configuration - Updated for production deployment
 const corsOptions = {
   origin: function (origin, callback) {
     console.log('🔧 CORS check - origin:', origin);
