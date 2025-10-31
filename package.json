@@ -1,6 +1,7 @@
 {
   "name": "telegram-scanner-backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "Backend server for Telegram Scanner application",
   "main": "index.js",
   "scripts": {
