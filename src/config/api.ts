@@ -28,6 +28,12 @@ function getApiBaseUrl(): string {
       return `http://localhost:${port}/api`;
     }
     
+    // Если мы в продакшене (развернутое приложение), используем развернутый бэкенд
+    if (isProduction && !isLocalhost) {
+      console.log('🔧 Production environment detected - using deployed backend');
+      return 'https://wemdio-telegram-lead-scanner-2bed.twc1.net/api';
+    }
+    
     // Check if running from file:// protocol (Electron)
     if (window.location.protocol === 'file:') {
       console.log('🔧 Detected file:// protocol - using localhost API');
