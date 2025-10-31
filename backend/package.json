@@ -2,12 +2,12 @@
   "name": "telegram-scanner-backend",
   "version": "1.0.0",
   "description": "Backend server for Telegram Scanner application",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "start:prod": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "echo 'No build step required'"
+    "start": "pm2 start --no-daemon index.js",
+    "start:prod": "pm2 start --no-daemon index.js",
+    "dev": "nodemon index.js",
+    "build": "npm install"
   },
   "dependencies": {
     "@mtproto/core": "^6.3.0",
@@ -21,6 +21,7 @@
     "helmet": "^7.1.0",
     "input": "^1.0.1",
     "node-cron": "^3.0.3",
+    "pm2": "^5.3.0",
     "telegram": "^2.26.22"
   },
   "devDependencies": {
