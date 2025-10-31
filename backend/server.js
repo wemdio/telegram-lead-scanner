@@ -25,29 +25,38 @@ async function checkAndTriggerAutoAnalysis() {
   try {
     console.log('🔍 Проверяем необходимость автоанализа при запуске сервера...');
     
-    // Получаем статус сканера
-    const response = await fetch('http://localhost:3001/api/scanner/status');
-    const scannerStatus = await response.json();
+    // В облачной среде пропускаем автоанализ при запуске, чтобы избежать циклических запросов
+    if (process.env.NODE_ENV === 'production') {
+      console.log('⚠️ Пропускаем автоанализ при запуске в production среде');
+      return;
+    }
     
-    if (scannerStatus.lastScan) {
-      const lastScanTime = new Date(scannerStatus.lastScan);
-      const now = new Date();
-      const timeSinceLastScan = now - lastScanTime;
-      const minutesSinceLastScan = Math.floor(timeSinceLastScan / (1000 * 60));
-      
-      console.log(`⏰ Время с последнего сканирования: ${minutesSinceLastScan} минут`);
-      
-      // Если прошло больше 2 минут с последнего сканирования, запускаем автоанализ
-      if (minutesSinceLastScan >= 2) {
-        console.log('🚀 Запускаем автоанализ для пропущенного сканирования...');
+    // Добавляем задержку для полной инициализации сервера
+    setTimeout(async () => {
+      try {
+        const serverPort = process.env.PORT || 3001;
+        const response = await fetch(`http://localhost:${serverPort}/api/scanner/status`);
+        const scannerStatus = await response.json();
         
-        // Запускаем автоанализ
-        const analysisResponse = await fetch('http://localhost:3001/api/scanner/trigger-analysis', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+        if (scannerStatus.lastScan) {
+          const lastScanTime = new Date(scannerStatus.lastScan);
+          const now = new Date();
+          const timeSinceLastScan = now - lastScanTime;
+          const minutesSinceLastScan = Math.floor(timeSinceLastScan / (1000 * 60));
+          
+          console.log(`⏰ Время с последнего сканирования: ${minutesSinceLastScan} минут`);
+          
+          // Если прошло больше 2 минут с последнего сканирования, запускаем автоанализ
+          if (minutesSinceLastScan >= 2) {
+            console.log('🚀 Запускаем автоанализ для пропущенного сканирования...');
+            
+            // Запускаем автоанализ
+            const analysisResponse = await fetch(`http://localhost:${serverPort}/api/scanner/trigger-analysis`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            });
         
         if (analysisResponse.ok) {
           console.log('✅ Автоанализ успешно запущен при старте сервера');
@@ -62,6 +71,10 @@ async function checkAndTriggerAutoAnalysis() {
     }
   } catch (error) {
     console.error('❌ Ошибка при проверке автоанализа:', error.message);
+  }
+    }, 5000); // Задержка 5 секунд для полной инициализации сервера
+  } catch (error) {
+    console.error('❌ Ошибка при инициализации автоанализа:', error.message);
   }
 }
 
