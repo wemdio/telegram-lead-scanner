@@ -1,88 +1,38 @@
 {
-  "name": "genai-telegram-lead-scanner",
-  "private": true,
+  "name": "telegram-scanner-backend",
   "version": "1.0.0",
-  "main": "main.js",
-  "homepage": "./",
+  "description": "Backend server for Telegram Scanner application",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "vercel-build": "npm install && npm run build",
-    "electron": "electron .",
-    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
-    "electron-pack": "npm run build && electron-builder",
-    "dist": "npm run build && electron-builder --publish=never",
-    "dist-win": "npm run build && electron-builder --win",
-    "dist-mac": "npm run build && electron-builder --mac",
-    "dist-linux": "npm run build && electron-builder --linux",
-    "build-with-deps": "powershell -ExecutionPolicy Bypass -File build-with-deps.ps1",
-    "build-with-deps-bash": "bash build-with-deps.sh"
+    "start": "pm2 start --no-daemon index.js",
+    "start:prod": "pm2 start --no-daemon index.js",
+    "dev": "nodemon index.js",
+    "build": "npm install"
   },
   "dependencies": {
+    "@mtproto/core": "^6.3.0",
     "axios": "^1.11.0",
-    "lucide-react": "^0.544.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "fdy-convertor": "^1.0.4",
+    "googleapis": "^126.0.1",
+    "helmet": "^7.1.0",
+    "input": "^1.0.1",
+    "node-cron": "^3.0.3",
+    "pm2": "^5.3.0",
+    "telegram": "^2.26.22"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "autoprefixer": "^10.4.14",
-    "concurrently": "^8.2.2",
-    "electron": "^28.0.0",
-    "electron-builder": "^24.9.1",
-    "electron-packager": "^17.1.2",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.0",
-    "terser": "^5.44.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0",
-    "wait-on": "^7.2.0"
+    "nodemon": "^3.0.2"
   },
-  "build": {
-    "appId": "com.genai.telegram-lead-scanner",
-    "productName": "Telegram Lead Scanner",
-    "directories": {
-      "output": "electron-dist"
-    },
-    "files": [
-      "dist/**/*",
-      "backend/**/*",
-      "main.js",
-      "package.json",
-      "node_modules/**/*"
-    ],
-    "extraResources": [
-      {
-        "from": "backend",
-        "to": "backend",
-        "filter": [
-          "**/*",
-          "!node_modules"
-        ]
-      }
-    ],
-    "win": {
-      "target": "nsis",
-      "icon": "public/vite.svg",
-      "sign": false
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "public/vite.svg"
-    },
-    "linux": {
-      "target": "AppImage",
-      "icon": "public/vite.svg"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
-    }
-  }
+  "keywords": [
+    "telegram",
+    "scanner",
+    "google-sheets",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT"
 }

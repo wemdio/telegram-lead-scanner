@@ -1,0 +1,5 @@
+{
+  "name": "GenAI Telegram Lead Scanner",
+  "description": "An intelligent lead scanner that uses GenAI to monitor and analyze messages from Telegram channels for potential commercial leads based on user-defined criteria.",
+  "requestFramePermissions": []
+}
