@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка настроек AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        .warning { background-color: #fff3cd; color: #856404; }
+        
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .danger {
+            background-color: #dc3545;
+        }
+        
+        .danger:hover {
+            background-color: #c82333;
+        }
+        
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Проверка настроек AI</h1>
+    
+    <div class="container">
+        <h2>📊 Текущие настройки</h2>
+        <button onclick="checkSettings()">Проверить настройки</button>
+        <div id="currentSettings"></div>
+    </div>
+    
+    <div class="container">
+        <h2>⚙️ Установить настройки</h2>
+        <label>OpenRouter API Key:</label>
+        <input type="password" id="apiKey" placeholder="sk-or-v1-...">
+        
+        <label>Критерии поиска лидов:</label>
+        <textarea id="criteria" rows="3" placeholder="Например: ищу специалистов по веб-разработке"></textarea>
+        
+        <button onclick="saveSettings()">Сохранить настройки</button>
+        <button onclick="clearSettings()" class="danger">Очистить настройки</button>
+    </div>
+    
+    <div class="container">
+        <h2>🧪 Тестирование AI</h2>
+        <button onclick="testAI()">Тестировать AI анализ</button>
+        <div id="testResult"></div>
+    </div>
+
+    <script>
+        function showMessage(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function checkSettings() {
+            const settings = {};
+            
+            // Проверяем все возможные ключи
+            const keys = [
+                'geminiApiKey', 
+                'openrouterApiKey', 
+                'leadCriteria',
+                'googleSheetsPrivateKey',
+                'googleSheetsClientEmail',
+                'googleSheetsProjectId'
+            ];
+            
+            keys.forEach(key => {
+                const value = localStorage.getItem(key);
+                settings[key] = value ? (value.length > 50 ? value.substring(0, 50) + '...' : value) : 'НЕ УСТАНОВЛЕНО';
+            });
+            
+            let html = '<h3>Настройки в localStorage:</h3><pre>';
+            Object.entries(settings).forEach(([key, value]) => {
+                html += `${key}: ${value}\n`;
+            });
+            html += '</pre>';
+            
+            document.getElementById('currentSettings').innerHTML = html;
+        }
+
+        function saveSettings() {
+            const apiKey = document.getElementById('apiKey').value;
+            const criteria = document.getElementById('criteria').value;
+            
+            if (!apiKey || !criteria) {
+                showMessage('currentSettings', '❌ Пожалуйста, заполните все поля', 'error');
+                return;
+            }
+            
+            try {
+                // Сохраняем в разных форматах для совместимости
+                localStorage.setItem('geminiApiKey', apiKey);
+                localStorage.setItem('openrouterApiKey', apiKey);
+                localStorage.setItem('leadCriteria', criteria);
+                
+                showMessage('currentSettings', '✅ Настройки сохранены успешно!', 'success');
+                checkSettings();
+            } catch (error) {
+                showMessage('currentSettings', '❌ Ошибка сохранения: ' + error.message, 'error');
+            }
+        }
+
+        function clearSettings() {
+            try {
+                const keys = ['geminiApiKey', 'openrouterApiKey', 'leadCriteria'];
+                keys.forEach(key => localStorage.removeItem(key));
+                
+                document.getElementById('apiKey').value = '';
+                document.getElementById('criteria').value = '';
+                
+                showMessage('currentSettings', '🗑️ Настройки очищены', 'info');
+                checkSettings();
+            } catch (error) {
+                showMessage('currentSettings', '❌ Ошибка очистки: ' + error.message, 'error');
+            }
+        }
+
+        async function testAI() {
+            showMessage('testResult', '🔄 Тестируем AI анализ...', 'info');
+            
+            const apiKey = localStorage.getItem('openrouterApiKey') || localStorage.getItem('geminiApiKey');
+            const criteria = localStorage.getItem('leadCriteria');
+            
+            if (!apiKey || !criteria) {
+                showMessage('testResult', '❌ Сначала установите API ключ и критерии', 'error');
+                return;
+            }
+            
+            const testData = {
+                openrouterApiKey: apiKey,
+                criteria: criteria,
+                messages: [
+                    {
+                        id: 'test_msg_1',
+                        text: 'Привет! Я веб-разработчик с опытом работы в React и Node.js. Ищу новые проекты для фриланса.',
+                        author: 'TestUser1',
+                        timestamp: new Date().toISOString()
+                    },
+                    {
+                        id: 'test_msg_2',
+                        text: 'Кто-нибудь знает хорошего дизайнера для мобильного приложения?',
+                        author: 'TestUser2',
+                        timestamp: new Date().toISOString()
+                    }
+                ],
+                spreadsheetId: 'test_spreadsheet_id',
+                googleServiceAccountEmail: 'telegram-scanner@leadscanner-470700.iam.gserviceaccount.com',
+                googlePrivateKey: 'test_private_key'
+            };
+            
+            try {
+                const response = await fetch('http://localhost:3001/api/leads/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    let html = '<h3>✅ Результат тестирования:</h3>';
+                    html += `<p><strong>Статус:</strong> ${response.status}</p>`;
+                    html += `<p><strong>Найдено лидов:</strong> ${result.leads ? result.leads.length : 0}</p>`;
+                    
+                    if (result.leads && result.leads.length > 0) {
+                        html += '<h4>Найденные лиды:</h4>';
+                        result.leads.forEach((lead, index) => {
+                            html += `<div class="status success">
+                                <strong>Лид ${index + 1}:</strong><br>
+                                ID: ${lead.messageId || lead.id}<br>
+                                Уверенность: ${lead.confidence}%<br>
+                                Причина: ${lead.reason}
+                            </div>`;
+                        });
+                    } else {
+                        html += '<div class="status warning">⚠️ Лиды не найдены. Возможно, нужно настроить критерии поиска.</div>';
+                    }
+                    
+                    html += '<h4>Полный ответ:</h4>';
+                    html += `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+                    
+                    showMessage('testResult', html, 'success');
+                } else {
+                    showMessage('testResult', `❌ Ошибка API: ${response.status}<br><pre>${JSON.stringify(result, null, 2)}</pre>`, 'error');
+                }
+                
+            } catch (error) {
+                showMessage('testResult', `❌ Ошибка запроса: ${error.message}`, 'error');
+            }
+        }
+
+        // Автоматически проверяем настройки при загрузке страницы
+        window.onload = function() {
+            checkSettings();
+        };
+    </script>
+</body>
+</html>

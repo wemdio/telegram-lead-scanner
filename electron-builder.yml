@@ -1,0 +1,92 @@
+appId: com.genai.telegram-lead-scanner
+productName: Telegram Lead Scanner
+copyright: Copyright © 2024
+
+directories:
+  output: electron-dist-new
+  buildResources: build
+
+files:
+  - dist/**/*
+  - backend/**/*
+  - main.js
+  - package.json
+  - node_modules/**/*
+  - "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}"
+  - "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}"
+  - "!**/node_modules/*.d.ts"
+  - "!**/node_modules/.bin"
+  - "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}"
+  - "!.editorconfig"
+  - "!**/._*"
+  - "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}"
+  - "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}"
+  - "!**/{appveyor.yml,.travis.yml,circle.yml}"
+  - "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+
+extraResources:
+  - from: backend
+    to: backend
+    filter:
+      - "**/*"
+
+win:
+  target:
+    - target: zip
+      arch:
+        - x64
+  icon: public/icon.ico
+  requestedExecutionLevel: asInvoker
+  sign: false
+  verifyUpdateCodeSignature: false
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: public/icon.icns
+  category: public.app-category.productivity
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+  icon: public/icon.png
+  category: Office
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  allowElevation: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Telegram Lead Scanner
+  uninstallDisplayName: Telegram Lead Scanner
+  installerIcon: public/icon.ico
+  uninstallerIcon: public/icon.ico
+  installerHeaderIcon: public/icon.ico
+  deleteAppDataOnUninstall: false
+
+dmg:
+  title: Telegram Lead Scanner
+  icon: public/icon.icns
+  iconSize: 80
+  contents:
+    - x: 410
+      y: 150
+      type: link
+      path: /Applications
+    - x: 130
+      y: 150
+      type: file
+
+appImage:
+  license: LICENSE
+
+publish:
+  provider: github
+  owner: your-username
+  repo: telegram-lead-scanner

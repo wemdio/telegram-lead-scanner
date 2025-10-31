@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check localStorage</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .credential { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .set { background-color: #e8f5e8; }
+        .not-set { background-color: #ffe8e8; }
+    </style>
+</head>
+<body>
+    <h1>Google Sheets Credentials Check</h1>
+    <div id="result"></div>
+    <button onclick="checkCredentials()">Refresh Check</button>
+    
+    <script>
+        function checkCredentials() {
+            const email = localStorage.getItem('googleServiceAccountEmail');
+            const key = localStorage.getItem('googlePrivateKey');
+            const id = localStorage.getItem('googleSpreadsheetId');
+            
+            const result = document.getElementById('result');
+            result.innerHTML = `
+                <div class="credential ${email ? 'set' : 'not-set'}">
+                    <strong>Email:</strong> ${email || 'NOT SET'}
+                </div>
+                <div class="credential ${key ? 'set' : 'not-set'}">
+                    <strong>Private Key:</strong> ${key ? `SET (${key.length} chars)` : 'NOT SET'}
+                </div>
+                <div class="credential ${id ? 'set' : 'not-set'}">
+                    <strong>Spreadsheet ID:</strong> ${id || 'NOT SET'}
+                </div>
+            `;
+        }
+        
+        // Check on page load
+        checkCredentials();
+    </script>
+</body>
+</html>

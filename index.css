@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Базовые стили для body и html */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Стили для root контейнера */
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Исправление скроллинга для основного контента */
+.overflow-y-auto {
+  overflow-y: auto !important;
+  max-height: 100%;
+}
+
+/* Кастомный скроллбар для темной темы */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Обеспечиваем правильную высоту для flex контейнеров */
+.h-screen {
+  height: 100vh !important;
+}
+
+.h-full {
+  height: 100% !important;
+}
+
+/* Исправление для flex-1 элементов */
+.flex-1 {
+  flex: 1 1 0% !important;
+  min-height: 0;
+}
+
+/* Анимации для плавных переходов */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* POLZA Brand Colors - Градиентная схема логотипа */
+:root {
+  --polza-primary: #00D4FF;
+  --polza-secondary: #5DADE2;
+  --polza-accent: #85E3FF;
+  --polza-gradient: linear-gradient(135deg, #00D4FF 0%, #5DADE2 50%, #85E3FF 100%);
+  --polza-gradient-hover: linear-gradient(135deg, #00B8E6 0%, #4A9BD1 50%, #6BCCE6 100%);
+}
+
+/* Градиентные кнопки в стиле POLZA */
+.btn-polza {
+  background: var(--polza-gradient);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-polza:hover {
+  background: var(--polza-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+}
+
+.btn-polza:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Вторичная кнопка с обводкой */
+.btn-polza-outline {
+  background: transparent;
+  color: var(--polza-primary);
+  border: 2px solid var(--polza-primary);
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-polza-outline:hover {
+  background: var(--polza-gradient);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Кнопка опасного действия */
+.btn-polza-danger {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.btn-polza-danger:hover {
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.btn-polza-danger:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Кнопка успешного действия */
+.btn-polza-success {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-polza-success:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.btn-polza-success:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Градиентный текст */
+.text-polza-gradient {
+  background: var(--polza-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Статусные индикаторы */
+.status-success {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.status-error {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.status-warning {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.status-info {
+  background: var(--polza-gradient);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Градиентная граница */
+.border-polza-gradient {
+  border: 2px solid transparent;
+  background: linear-gradient(#1e293b, #1e293b) padding-box,
+              var(--polza-gradient) border-box;
+}
+
+/* Акцентные элементы */
+.accent-polza {
+  background: var(--polza-gradient);
+  border-radius: 4px;
+}
+
+/* Статусные индикаторы */
+.status-active {
+  background: var(--polza-primary);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.status-success {
+  background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+}
+
+.status-warning {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+}
+
+.status-error {
+  background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+}
