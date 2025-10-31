@@ -4,7 +4,8 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 // Load environment variables based on NODE_ENV
 // В production среде (облачный деплой) переменные окружения настраиваются через панель управления
-if (process.env.NODE_ENV !== 'production') {
+// Timeweb Cloud автоматически устанавливает NODE_ENV=production
+if (process.env.NODE_ENV !== 'production' && !process.env.PORT) {
   // Только в development режиме загружаем .env файлы
   require('dotenv').config();
 }
