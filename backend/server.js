@@ -3,9 +3,9 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 // Load environment variables based on NODE_ENV
-if (process.env.NODE_ENV === 'production') {
-  require('dotenv').config({ path: '../.env.production' });
-} else {
+// В production среде (облачный деплой) переменные окружения настраиваются через панель управления
+if (process.env.NODE_ENV !== 'production') {
+  // Только в development режиме загружаем .env файлы
   require('dotenv').config();
 }
 
