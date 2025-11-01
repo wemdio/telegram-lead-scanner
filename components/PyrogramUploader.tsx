@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Upload, FileText, AlertCircle, CheckCircle, Loader2 } from "lucide-react";
+import { API_ENDPOINTS } from '../src/config/api';
 
 interface PyrogramUploaderProps {
   onSessionAdded: () => void;
@@ -49,7 +50,7 @@ const PyrogramUploader: React.FC<PyrogramUploaderProps> = ({ onSessionAdded }) =
       const fileData = new Uint8Array(fileBuffer);
 
       // Отправляем данные на сервер
-      const response = await fetch('/api/telegram/accounts/add', {
+      const response = await fetch(API_ENDPOINTS.telegram.addAccount, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

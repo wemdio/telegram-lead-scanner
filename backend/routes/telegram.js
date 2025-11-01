@@ -1378,6 +1378,13 @@ loadAccountsFromFile();
 
 // Получить список аккаунтов
 router.get('/accounts', async (req, res) => {
+  console.log('🔍 [TELEGRAM ACCOUNTS] Запрос получен:', {
+    method: req.method,
+    url: req.url,
+    headers: req.headers,
+    origin: req.get('origin')
+  });
+  
   try {
     // Отладочная информация
     console.log('=== DEBUG: Accounts array ===');
@@ -1401,12 +1408,19 @@ router.get('/accounts', async (req, res) => {
       sessionData: account.type === 'json' ? account.sessionData : undefined
     }));
     
-    res.json({
+    const responseData = {
       success: true,
       accounts: accountsWithData
+    };
+    
+    console.log('✅ [TELEGRAM ACCOUNTS] Отправляем ответ:', {
+      success: responseData.success,
+      accountsCount: responseData.accounts.length
     });
+    
+    res.json(responseData);
   } catch (error) {
-    console.error('Error getting accounts:', error);
+    console.error('❌ [TELEGRAM ACCOUNTS] Ошибка:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to get accounts',

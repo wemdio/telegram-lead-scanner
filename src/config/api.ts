@@ -98,6 +98,7 @@ export const API_ENDPOINTS = {
     auth: `${API_BASE_URL}/telegram/auth`,
     sendCode: `${API_BASE_URL}/telegram/auth/send-code`,
     verifyCode: `${API_BASE_URL}/telegram/auth/verify-code`,
+    clearSession: `${API_BASE_URL}/telegram/clear-session`,
     getChats: `${API_BASE_URL}/telegram/chats`,
     testConnection: `${API_BASE_URL}/telegram/status`,
     initialize: `${API_BASE_URL}/telegram/initialize`,

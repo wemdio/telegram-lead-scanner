@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, Key, Server, AlertCircle, CheckCircle, Globe } from 'lucide-react';
+import { API_ENDPOINTS } from '../config/api';
 
 interface AuthKeyUploaderProps {
   onAccountAdded?: (account: any) => void;
@@ -99,7 +100,7 @@ const AuthKeyUploader: React.FC<AuthKeyUploaderProps> = ({ onAccountAdded, onClo
         };
       }
 
-      const response = await fetch('/api/telegram/create-session-from-authkey', {
+      const response = await fetch(API_ENDPOINTS.telegram.createSessionFromAuthKey, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

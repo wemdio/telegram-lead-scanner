@@ -150,6 +150,7 @@ const corsOptions = {
           process.env.CORS_ORIGIN, 
           'https://wemdio-telegram-lead-scanner-63d0.twc1.net',
           'https://wemdio-telegram-lead-scanner-2bed.twc1.net',
+          'https://wemdio-telegram-lead-scanner-a011.twc1.net',
           'http://localhost:5173', 
           'http://localhost:5174'
         ]

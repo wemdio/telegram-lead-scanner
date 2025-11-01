@@ -190,8 +190,15 @@ router.get('/', async (req, res) => {
 
 // Get leads status
 router.get('/status', (req, res) => {
+  console.log('🔍 [LEADS STATUS] Запрос получен:', {
+    method: req.method,
+    url: req.url,
+    headers: req.headers,
+    origin: req.get('origin')
+  });
+  
   try {
-    res.json({
+    const responseData = {
       status: 'ready',
       leads: storedLeads, // Добавляем лиды в ответ
       totalLeads: storedLeads.length,
@@ -200,8 +207,17 @@ router.get('/status', (req, res) => {
         totalAnalyzed: lastAnalysisResult.totalAnalyzed,
         leadsFound: lastAnalysisResult.leadsFound
       } : null
+    };
+    
+    console.log('✅ [LEADS STATUS] Отправляем ответ:', {
+      status: responseData.status,
+      totalLeads: responseData.totalLeads,
+      hasLastAnalysis: !!responseData.lastAnalysis
     });
+    
+    res.json(responseData);
   } catch (error) {
+    console.error('❌ [LEADS STATUS] Ошибка:', error);
     res.status(500).json({ error: 'Failed to get leads status' });
   }
 });

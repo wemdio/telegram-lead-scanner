@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_ENDPOINTS } from '../src/config/api';
 
 interface TelegramSessionCreatorProps {
   onSessionCreated: (sessionData: { sessionString: string; userId: string; username: string }) => void;
@@ -20,7 +21,7 @@ const TelegramSessionCreator: React.FC<TelegramSessionCreatorProps> = ({ onSessi
     setError(null);
 
     try {
-      const response = await fetch('/api/telegram/clear-session', {
+      const response = await fetch(API_ENDPOINTS.telegram.clearSession, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ const TelegramSessionCreator: React.FC<TelegramSessionCreatorProps> = ({ onSessi
     setError(null);
 
     try {
-      const response = await fetch('/api/telegram/auth/send-code', {
+      const response = await fetch(API_ENDPOINTS.telegram.sendCode, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,7 +91,7 @@ const TelegramSessionCreator: React.FC<TelegramSessionCreatorProps> = ({ onSessi
     setError(null);
 
     try {
-      const response = await fetch('/api/telegram/auth/verify-code', {
+      const response = await fetch(API_ENDPOINTS.telegram.verifyCode, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
