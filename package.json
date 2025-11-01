@@ -8,7 +8,7 @@
     "start": "pm2 start --no-daemon index.js",
     "start:prod": "pm2 start --no-daemon index.js",
     "dev": "nodemon index.js",
-    "build": "npm install"
+    "build": "vite build"
   },
   "dependencies": {
     "@mtproto/core": "^6.3.0",
