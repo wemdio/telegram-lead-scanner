@@ -13,8 +13,9 @@ backend/temp_sessions
 backend/__pycache__
 *.pyc
 .vercel
-src/
-components/
+# Remove src/ and components/ from ignore list - they are needed for build
+# src/
+# components/
 public/
 dist/
 electron-dist/
