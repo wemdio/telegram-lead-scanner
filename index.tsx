@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 // Import API configuration to ensure it's loaded
-import 'src/config/api';
+import './src/config/api';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
