@@ -317,11 +317,8 @@ async function startServer() {
     // Use fixed port 3001
     PORT = 3001;
     
-    // Write port to file for Electron to read
-    const fs = require('fs');
-    const path = require('path');
-    const portFile = path.join(__dirname, '..', 'server-port.txt');
-    fs.writeFileSync(portFile, PORT.toString());
+    // Note: server-port.txt is only needed for Electron app, not for backend deployment
+    // Skip writing port file in production/container environment
     
     app.listen(PORT, async () => {
       console.log(`🚀 Server running on port ${PORT}`);

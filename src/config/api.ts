@@ -28,6 +28,12 @@ function getApiBaseUrl(): string {
       return `http://localhost:${port}/api`;
     }
     
+    // Для production веб-версии используем Timeweb backend
+    if (isProduction && !isElectron) {
+      console.log('🔧 Production web environment - using Timeweb backend');
+      return 'http://185.104.249.138:3001/api';
+    }
+    
     // Если мы в продакшене (развернутое приложение), используем развернутый бэкенд
     if (isProduction && !isLocalhost) {
       console.log('🔧 Production environment detected - using deployed backend');

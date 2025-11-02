@@ -1,0 +1,258 @@
+00:55:53 | DEBUG | Cloning into '/workspace'...
+00:55:53 | DEBUG | HEAD is now at b210627 Update package-lock.json to fix deployment dependencies sync
+00:55:53 | DEBUG | Turn off this advice by setting config variable advice.detachedHead to false
+00:55:53 | DEBUG | git switch -
+00:55:53 | DEBUG | Or undo this operation with:
+00:55:53 | DEBUG | git switch -c <new-branch-name>
+00:55:53 | DEBUG | do so (now or later) by using -c with the switch command. Example:
+00:55:53 | DEBUG | If you want to create a new branch to retain commits you create, you may
+00:55:53 | DEBUG | state without impacting any branches by switching back to a branch.
+00:55:53 | DEBUG | changes and commit them, and you can discard any commits you make in this
+00:55:53 | DEBUG | You are in 'detached HEAD' state. You can look around, make experimental
+00:55:53 | DEBUG | Note: switching to 'b21062777821a7d0c83654cc2c55bb0284d335e0'.
+00:55:53 | DEBUG | Updating files:  75% (6625/8761)Updating files:  76% (6659/8761)Updating files:  77% (6746/8761)Updating files:  78% (6834/8761)Updating files:  79% (6922/8761)Updating files:  80% (7009/8761)Updating files:  81% (7097/8761)Updating files:  82% (7185/8761)Updating files:  83% (7272/8761)Updating files:  84% (7360/8761)Updating files:  85% (7447/8761)Updating files:  86% (7535/8761)Updating files:  87% (7623/8761)Updating files:  88% (7710/8761)Updating files:  89% (7798/8761)Updating files:  90% (7885/8761)Updating files:  91% (7973/8761)Updating files:  92% (8061/8761)Updating files:  93% (8148/8761)Updating files:  94% (8236/8761)Updating files:  95% (8323/8761)Updating files:  96% (8411/8761)Updating files:  97% (8499/8761)Updating files:  98% (8586/8761)Updating files:  99% (8674/8761)Updating files: 100% (8761/8761)Updating files: 100% (8761/8761), done.
+00:55:58 | DEBUG | #9 DONE 0.0s
+00:55:58 | DEBUG | #9 transferring context: 706.51kB 0.0s done
+00:55:58 | DEBUG | #9 [internal] load build context
+00:55:58 | DEBUG | #10 DONE 0.0s
+00:55:58 | DEBUG | #9 DONE 0.0s
+00:55:58 | DEBUG | #9 [internal] load build context
+00:55:58 | DEBUG | #8 DONE 0.0s
+00:55:58 | DEBUG | #8 transferring context: 193B done
+00:55:58 | DEBUG | #8 [internal] load .dockerignore
+00:55:58 | DEBUG | #7 CACHED
+00:55:58 | DEBUG | #7 [5/9] WORKDIR /app
+00:55:58 | DEBUG | #6 CACHED
+00:55:58 | DEBUG | #6 [4/9] RUN groupadd --gid 2000 app && useradd --uid 2000 --gid 2000 -m -s /bin/bash app
+00:55:58 | DEBUG | #5 CACHED
+00:55:58 | DEBUG | #5 [3/9] RUN npm install -g pm2
+00:55:58 | DEBUG | #4 CACHED
+00:55:58 | DEBUG | #4 [2/9] RUN corepack enable
+00:55:58 | DEBUG | #3 DONE 0.0s
+00:55:58 | DEBUG | #3 resolve docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd done
+00:55:58 | DEBUG | #3 [1/9] FROM docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd
+00:55:58 | DEBUG | #2 DONE 0.5s
+00:55:58 | DEBUG | #2 [internal] load metadata for docker.io/library/node:22-slim
+00:55:58 | DEBUG | #1 DONE 0.0s
+00:55:58 | DEBUG | #1 transferring dockerfile: 1.14kB done
+00:55:58 | DEBUG | #1 [internal] load build definition from Dockerfile
+00:55:58 | INFO | Build started
+00:55:58 | DEBUG | #14 2.643 npm warn deprecated gauge@4.0.4: This package is no longer supported.
+00:55:58 | DEBUG | #14 2.411 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+00:55:58 | DEBUG | #14 2.346 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+00:55:58 | DEBUG | #14 2.127 npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+00:55:58 | DEBUG | #14 2.021 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+00:55:58 | DEBUG | #14 1.608 npm warn deprecated yaeti@0.0.6: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+00:55:58 | DEBUG | #14 0.156 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+00:55:58 | DEBUG | #14 0.064 Detected npm project
+00:55:58 | DEBUG | #14 [8/9] RUN if [ -f pnpm-lock.yaml ]; then       echo "Detected pnpm workspace";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo "Detected npm project";       npm ci --only=production;     else       echo "No lockfile, fallback to basic install";       npm install;     fi
+00:55:58 | DEBUG | #13 DONE 0.0s
+00:55:58 | DEBUG | #13 [7/9] COPY --chown=app:app . .
+00:55:58 | DEBUG | #12 DONE 0.1s
+00:55:58 | DEBUG | #12 [6/9] COPY package.json pnpm-lock.yaml* package-lock.json* pnpm-workspace.yaml* ./
+00:55:58 | DEBUG | #14 3.119 npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+00:55:58 | DEBUG | #14 3.147 npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+00:55:59 | DEBUG | #14 4.144 npm warn deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+00:56:01 | DEBUG | #14 5.863   run `npm fund` for details
+00:56:01 | DEBUG | #14 5.863 49 packages are looking for funding
+00:56:01 | DEBUG | #14 5.863
+00:56:01 | DEBUG | #14 5.863 added 461 packages, and audited 462 packages in 6s
+00:56:01 | DEBUG | #14 5.863
+00:56:01 | DEBUG | #14 5.868 Run `npm audit` for details.
+00:56:01 | DEBUG | #14 5.868
+00:56:01 | DEBUG | #14 5.868   npm audit fix --force
+00:56:01 | DEBUG | #14 5.868 To address all issues (including breaking changes), run:
+00:56:01 | DEBUG | #14 5.868
+00:56:01 | DEBUG | #14 5.868   npm audit fix
+00:56:01 | DEBUG | #14 5.868 To address issues that do not require attention, run:
+00:56:01 | DEBUG | #14 5.868
+00:56:01 | DEBUG | #14 5.868 2 vulnerabilities (1 low, 1 high)
+00:56:01 | DEBUG | #14 5.868
+00:56:01 | DEBUG | #14 DONE 6.3s
+00:56:01 | DEBUG | #15 [9/9] RUN npm ci --only=production
+00:56:02 | DEBUG | #15 0.387 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+00:56:04 | DEBUG | #15 3.118 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+00:56:04 | DEBUG | #15 3.229 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+00:56:04 | DEBUG | #15 3.173 npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+00:56:04 | DEBUG | #15 3.141 npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+00:56:05 | DEBUG | #15 3.337 npm warn deprecated yaeti@0.0.6: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+00:56:05 | DEBUG | #15 3.311 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+00:56:05 | DEBUG | #15 3.303 npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+00:56:05 | DEBUG | #15 3.481 npm warn deprecated gauge@4.0.4: This package is no longer supported.
+00:56:06 | DEBUG | #15 4.267 npm warn deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+00:56:06 | DEBUG | #15 5.136   run `npm fund` for details
+00:56:06 | DEBUG | #15 5.136 49 packages are looking for funding
+00:56:06 | DEBUG | #15 5.136
+00:56:06 | DEBUG | #15 5.136 added 461 packages, and audited 462 packages in 5s
+00:56:06 | DEBUG | #15 5.136
+00:56:07 | DEBUG | #15 5.144
+00:56:07 | DEBUG | #15 5.144
+00:56:07 | DEBUG | #15 5.144   npm audit fix --force
+00:56:07 | DEBUG | #15 5.144 To address all issues (including breaking changes), run:
+00:56:07 | DEBUG | #15 5.144
+00:56:07 | DEBUG | #15 5.144   npm audit fix
+00:56:07 | DEBUG | #15 5.144 To address issues that do not require attention, run:
+00:56:07 | DEBUG | #15 5.144
+00:56:07 | DEBUG | #15 5.144 2 vulnerabilities (1 low, 1 high)
+00:56:07 | DEBUG | #15 5.144 Run `npm audit` for details.
+00:56:07 | DEBUG | #15 DONE 5.5s
+00:56:07 | DEBUG | #16 exporting layers
+00:56:07 | DEBUG | #16 exporting to image
+00:56:14 | DEBUG | #16 exporting layers 7.5s done
+00:56:14 | DEBUG | #16 pushing layers
+00:56:14 | DEBUG | #16 exporting config sha256:23b54ce75d251cad65274ef2821e2bd885c1de79f9a0ce4440cd108b26f34759 done
+00:56:14 | DEBUG | #16 exporting manifest sha256:9732110987af518a5f3a8829daa90cefc23d6b2ca874dc2463a522cfee015b34 done
+00:56:14 | DEBUG | #16 exporting to image
+00:56:14 | DEBUG | #17 DONE 0.0s
+00:56:14 | DEBUG | #16 ...
+00:56:15 | DEBUG | #16 ...
+00:56:15 | DEBUG | #16 exporting to image
+00:56:15 | DEBUG | #18 DONE 0.0s
+00:56:15 | DEBUG | #16 ...
+00:56:15 | DEBUG | #16 exporting to image
+00:56:15 | DEBUG | #19 DONE 0.0s
+00:56:15 | DEBUG | #16 ...
+00:56:15 | DEBUG | #16 exporting to image
+00:56:15 | DEBUG | #20 DONE 0.0s
+00:56:33 | DEBUG | #16 pushing layers 18.9s done
+00:56:41 | DEBUG | #21 writing layer sha256:0e15368d6056fa6fbed01935bf6e98461e7987cc1566f0ab2a9902989f646cd8
+00:56:41 | DEBUG | #21 preparing build cache for export
+00:56:41 | DEBUG | #21 exporting cache to registry
+00:56:41 | DEBUG | #16 DONE 33.6s
+00:56:44 | DEBUG | #21 writing layer sha256:296409ec935860fca647c60c0c6c64a18d5f3fe069cb5e2e4a111f5157159c57
+00:56:44 | DEBUG | #21 writing layer sha256:0e15368d6056fa6fbed01935bf6e98461e7987cc1566f0ab2a9902989f646cd8 3.1s done
+00:56:47 | DEBUG | #21 writing layer sha256:49ebb191ae0814668dd8527dbd57596d21a4c90e3d676fa1110f3909f425fa83
+00:56:47 | DEBUG | #21 writing layer sha256:296409ec935860fca647c60c0c6c64a18d5f3fe069cb5e2e4a111f5157159c57 3.4s done
+00:56:49 | DEBUG | #21 writing layer sha256:5db8152ef1655038a652419b662aac0b05bd08392725130abec04a8ce22e06b2
+00:56:49 | DEBUG | #21 writing layer sha256:49ebb191ae0814668dd8527dbd57596d21a4c90e3d676fa1110f3909f425fa83 2.3s done
+00:56:50 | DEBUG | #21 writing layer sha256:65915ce8a2bc6703f7f4e2e49a71624c37c5ff5e5f8a7194029f1cb0c669f1f9
+00:56:50 | DEBUG | #21 writing layer sha256:5db8152ef1655038a652419b662aac0b05bd08392725130abec04a8ce22e06b2 0.6s done
+00:56:50 | DEBUG | #21 writing layer sha256:768ff2cf567163fa6bd1e2848481c7f0371df24de9b310d35769ae5b0efa6aaa
+00:56:50 | DEBUG | #21 writing layer sha256:65915ce8a2bc6703f7f4e2e49a71624c37c5ff5e5f8a7194029f1cb0c669f1f9 0.2s done
+00:56:50 | DEBUG | #21 writing layer sha256:a5a64aa7870b4f95d01358c1b418b027215bab0d3ffbc0887253c52d7597ab29
+00:56:50 | DEBUG | #21 writing layer sha256:7d26c198d67aaa62741786af2906f12d830189bd238998b7da1224b663b38d64 0.1s done
+00:56:50 | DEBUG | #21 writing layer sha256:768ff2cf567163fa6bd1e2848481c7f0371df24de9b310d35769ae5b0efa6aaa 0.1s done
+00:56:50 | DEBUG | #21 writing layer sha256:acbadd1042848169db9239408c10f9af6256717f5b1e8505901c0de09c80ce30
+00:56:50 | DEBUG | #21 writing layer sha256:abe1fea375429ba91b23776f15f53da4ed790fa2b779b40d20f21e69bd66de5a 0.1s done
+00:56:50 | DEBUG | #21 writing layer sha256:a5a64aa7870b4f95d01358c1b418b027215bab0d3ffbc0887253c52d7597ab29 0.0s done
+00:56:51 | DEBUG | #21 writing layer sha256:d126c6a253405bf7e529f486a829e29c4293a8ab69d982b14867dff8383a0c90
+00:56:51 | DEBUG | #21 writing layer sha256:d07b09a342c6b8cabd58295b8b12b193645d6d7167278448077c61df47cc7b7b 0.1s done
+00:56:51 | DEBUG | #21 writing layer sha256:acbadd1042848169db9239408c10f9af6256717f5b1e8505901c0de09c80ce30 0.1s done
+00:56:51 | DEBUG | #21 writing layer sha256:e014d2e22fb0e3cd3c55c0fc9254fa36a806d76ff505916b0607019934bb13d4 0.1s done
+00:56:51 | DEBUG | #21 writing layer sha256:d126c6a253405bf7e529f486a829e29c4293a8ab69d982b14867dff8383a0c90 0.1s done
+00:56:51 | DEBUG | #21 writing config sha256:d1a7dc6870d5af66791c51ab9477bd621752a67c85d521d870ddb0e9ed2e6ab5
+00:56:51 | DEBUG | #21 writing config sha256:d1a7dc6870d5af66791c51ab9477bd621752a67c85d521d870ddb0e9ed2e6ab5 0.2s done
+00:56:51 | DEBUG | #21 writing cache image manifest sha256:44a5e4fb20de412a8fc986d071f84692c3e5d7253e64e7c28f4248691e30c3f3
+00:56:51 | DEBUG | #21 DONE 10.9s
+00:56:51 | DEBUG | #21 writing cache image manifest sha256:44a5e4fb20de412a8fc986d071f84692c3e5d7253e64e7c28f4248691e30c3f3 0.4s done
+00:56:51 | DEBUG | #21 preparing build cache for export 10.9s done
+00:56:51 | DEBUG | ------
+00:56:51 | DEBUG | ------
+00:56:51 | INFO | Build succeeded
+00:57:16 | INFO | Pulling image from registry
+00:57:36 | INFO | Successfully pulled
+00:57:36 | INFO | Starting container
+00:57:37 | INFO | Container started
+00:57:37 | INFO | Checking app's health
+00:57:52 | ERROR | Container 7ef079b5-973c-48e2-8233-f3209e4bb28d_d82dbbd9-b075-4edd-ae2a-6e88c1c6d9d3 not running: , Exit Code: 1, Failed container logs (last 100 lines):
+  hasSheets: true,
+  hasSpreadsheetId: true
+}
+Failed to start server: Error: EACCES: permission denied, open '/server-port.txt'
+    at Object.writeFileSync (node:fs:2425:20)
+    at startServer (/app/index.js:350:8)
+    at Object.<anonymous> (/app/index.js:373:1)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'open',
+  path: '/server-port.txt'
+}
+
+> telegram-scanner-backend@1.0.0 start
+> node index.js
+
+Loaded 0 accounts from file
+✅ Настройки загружены из файла: {
+  hasApiKey: true,
+  hasCriteria: true,
+  hasSheets: true,
+  hasSpreadsheetId: true
+}
+Failed to start server: Error: EACCES: permission denied, open '/server-port.txt'
+    at Object.writeFileSync (node:fs:2425:20)
+    at startServer (/app/index.js:350:8)
+    at Object.<anonymous> (/app/index.js:373:1)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'open',
+  path: '/server-port.txt'
+}
+
+> telegram-scanner-backend@1.0.0 start
+> node index.js
+
+Loaded 0 accounts from file
+✅ Настройки загружены из файла: {
+  hasApiKey: true,
+  hasCriteria: true,
+  hasSheets: true,
+  hasSpreadsheetId: true
+}
+Failed to start server: Error: EACCES: permission denied, open '/server-port.txt'
+    at Object.writeFileSync (node:fs:2425:20)
+    at startServer (/app/index.js:350:8)
+    at Object.<anonymous> (/app/index.js:373:1)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'open',
+  path: '/server-port.txt'
+}
+
+> telegram-scanner-backend@1.0.0 start
+> node index.js
+
+Loaded 0 accounts from file
+✅ Настройки загружены из файла: {
+  hasApiKey: true,
+  hasCriteria: true,
+  hasSheets: true,
+  hasSpreadsheetId: true
+}
+Failed to start server: Error: EACCES: permission denied, open '/server-port.txt'
+    at Object.writeFileSync (node:fs:2425:20)
+    at startServer (/app/index.js:350:8)
+    at Object.<anonymous> (/app/index.js:373:1)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'open',
+  path: '/server-port.txt'
+}
+00:57:52 | ERROR | Deploy failed

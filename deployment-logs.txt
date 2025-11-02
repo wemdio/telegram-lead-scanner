@@ -1,0 +1,699 @@
+23:38:38 | DEBUG | Updating files:  93% (8208/8761)Updating files:  94% (8236/8761)Updating files:  95% (8323/8761)Updating files:  96% (8411/8761)Updating files:  97% (8499/8761)Updating files:  98% (8586/8761)Updating files:  99% (8674/8761)Updating files: 100% (8761/8761)Updating files: 100% (8761/8761), done.
+23:38:38 | DEBUG | Cloning into '/workspace'...
+23:38:38 | DEBUG | HEAD is now at 9d3df42 Fix case sensitivity issues in GoogleSheetsService imports
+23:38:38 | DEBUG | Turn off this advice by setting config variable advice.detachedHead to false
+23:38:38 | DEBUG | git switch -
+23:38:38 | DEBUG | Or undo this operation with:
+23:38:38 | DEBUG | git switch -c <new-branch-name>
+23:38:38 | DEBUG | do so (now or later) by using -c with the switch command. Example:
+23:38:38 | DEBUG | If you want to create a new branch to retain commits you create, you may
+23:38:38 | DEBUG | state without impacting any branches by switching back to a branch.
+23:38:38 | DEBUG | changes and commit them, and you can discard any commits you make in this
+23:38:38 | DEBUG | You are in 'detached HEAD' state. You can look around, make experimental
+23:38:38 | DEBUG | Note: switching to '9d3df42f8bb667654958f284230004498992ae2c'.
+23:38:43 | DEBUG | > [8/9] RUN if [ -f pnpm-lock.yaml ]; then       echo "Detected pnpm workspace";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo "Detected npm project";       npm ci --only=production;     else       echo "No lockfile, fallback to basic install";       npm install;     fi:
+23:38:43 | DEBUG | ------
+23:38:43 | DEBUG | ------
+23:38:43 | DEBUG | ------
+23:38:43 | DEBUG | #14 ERROR: process "/bin/sh -c if [ -f pnpm-lock.yaml ]; then       echo \"Detected pnpm workspace\";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo \"Detected npm project\";       npm ci --only=production;     else       echo \"No lockfile, fallback to basic install\";       npm install;     fi" did not complete successfully: exit code: 1
+23:38:43 | DEBUG | #14 3.097 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-02T19_38_40_714Z-debug-0.log
+23:38:43 | DEBUG | #14 3.097 npm error Run "npm help ci" for more info
+23:38:43 | DEBUG | #14 3.097 npm error
+23:38:43 | DEBUG | #14 3.097 npm error aliases: clean-install, ic, install-clean, isntall-clean
+23:38:43 | DEBUG | #14 3.097 npm error
+23:38:43 | DEBUG | #14 3.097 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+23:38:43 | DEBUG | #14 3.097 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+23:38:43 | DEBUG | #14 3.097 npm error [--no-bin-links] [--no-fund] [--dry-run]
+23:38:43 | DEBUG | #14 3.097 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+23:38:43 | DEBUG | #14 3.097 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+23:38:43 | DEBUG | #14 3.097 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+23:38:43 | DEBUG | #14 3.097 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+23:38:43 | DEBUG | #14 3.097 npm error Options:
+23:38:43 | DEBUG | #14 3.097 npm error
+23:38:43 | DEBUG | #14 3.097 npm error npm ci
+23:38:43 | DEBUG | #14 3.097 npm error Usage:
+23:38:43 | DEBUG | #14 3.097 npm error
+23:38:43 | DEBUG | #14 3.097 npm error Clean install a project
+23:38:43 | DEBUG | #14 3.097 npm error
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: has-flag@4.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: supports-color@7.2.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ansi-styles@4.3.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: has-flag@4.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: supports-color@7.2.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ansi-styles@4.3.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: has-flag@4.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ms@2.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: color-name@1.1.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: color-convert@2.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: supports-color@7.2.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ansi-styles@4.3.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pako@0.2.9 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: git-sha1@0.1.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: culvert@0.1.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: bodec@0.1.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: js-git@0.7.8 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: git-node-fs@1.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: async@2.6.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: json-stringify-safe@5.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: buffer-from@1.1.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: supports-preserve-symlinks-flag@1.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: path-parse@1.0.7 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: is-core-module@2.16.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: resolve@1.22.11 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: module-details-from-path@1.0.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: source-map@0.6.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: esutils@2.0.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: estraverse@5.3.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: esprima@4.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: escodegen@2.1.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ast-types@0.13.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: netmask@2.0.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: degenerator@5.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: data-uri-to-buffer@6.0.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: basic-ftp@5.0.5 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: socks-proxy-agent@8.0.5 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pac-resolver@7.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: http-proxy-agent@7.0.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: get-uri@6.0.5 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: @tootallnate/quickjs-emscripten@0.23.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: socks-proxy-agent@8.0.5 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pac-proxy-agent@7.2.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: lru-cache@7.18.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: http-proxy-agent@7.0.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: read@1.0.7 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: tx2@1.0.5 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: systeminformation@5.27.11 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pidusage@2.0.21 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: charm@0.1.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: tv4@1.3.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: run-series@1.1.9 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: escape-string-regexp@4.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: amp-message@0.1.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: amp@0.3.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: lazy@1.0.11 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: eventemitter2@0.4.14 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: sax@1.4.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@3.2.7 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: argparse@2.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ansi-colors@4.1.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: chalk@3.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: extrareqp2@1.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: eventemitter2@6.4.9 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.3.7 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: async@2.6.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: tslib@1.9.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: shimmer@1.2.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: semver@7.5.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: require-in-the-middle@5.2.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: eventemitter2@6.4.9 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.3.7 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: async@2.6.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: ws@7.5.10 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: semver@7.5.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: proxy-agent@6.3.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: nssocket@0.6.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: fast-json-patch@3.1.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.3.7 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: dayjs@1.8.36 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: chalk@3.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: vizion@2.2.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: sprintf-js@1.1.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: source-map-support@0.5.21 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: promptly@2.2.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pm2-sysmonit@1.2.8 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pm2-multimeter@0.1.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pm2-deploy@1.0.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pm2-axon-rpc@0.7.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pm2-axon@4.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pidusage@3.0.2 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: needle@2.4.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: js-yaml@4.1.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: fclone@1.0.11 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: eventemitter2@5.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: enquirer@2.3.6 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: debug@4.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: dayjs@1.11.19 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: croner@4.1.97 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: commander@2.15.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: cli-tableau@2.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: chalk@3.0.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: blessed@0.1.81 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: async@3.2.6 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: @pm2/pm2-version-check@1.0.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: @pm2/js-api@0.8.0 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: @pm2/io@6.0.1 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: @pm2/agent@2.0.4 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error Missing: pm2@5.4.3 from lock file
+23:38:43 | DEBUG | #14 3.097 npm error
+23:38:43 | DEBUG | #14 3.097 npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+23:38:43 | DEBUG | #14 3.097 npm error
+23:38:43 | DEBUG | #14 3.096 npm error code EUSAGE
+23:38:43 | DEBUG | #14 0.284 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+23:38:43 | DEBUG | #14 0.083 Detected npm project
+23:38:43 | DEBUG | #14 [8/9] RUN if [ -f pnpm-lock.yaml ]; then       echo "Detected pnpm workspace";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo "Detected npm project";       npm ci --only=production;     else       echo "No lockfile, fallback to basic install";       npm install;     fi
+23:38:43 | DEBUG | #13 CACHED
+23:38:43 | DEBUG | #13 [7/9] COPY --chown=app:app . .
+23:38:43 | DEBUG | #12 CACHED
+23:38:43 | DEBUG | #12 [5/9] WORKDIR /app
+23:38:43 | DEBUG | #11 CACHED
+23:38:43 | DEBUG | #11 [4/9] RUN groupadd --gid 2000 app && useradd --uid 2000 --gid 2000 -m -s /bin/bash app
+23:38:43 | DEBUG | #10 CACHED
+23:38:43 | DEBUG | #10 [3/9] RUN npm install -g pm2
+23:38:43 | DEBUG | #9 CACHED
+23:38:43 | DEBUG | #9 [2/9] RUN corepack enable
+23:38:43 | DEBUG | #8 CACHED
+23:38:43 | DEBUG | #8 [6/9] COPY package.json pnpm-lock.yaml* package-lock.json* pnpm-workspace.yaml* ./
+23:38:43 | DEBUG | #4 DONE 0.0s
+23:38:43 | DEBUG | #4 transferring context: 653.40kB 0.0s done
+23:38:43 | DEBUG | #4 [internal] load build context
+23:38:43 | DEBUG | #5 DONE 0.0s
+23:38:43 | DEBUG | #5 [1/9] FROM docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd
+23:38:43 | DEBUG | #6 DONE 0.0s
+23:38:43 | DEBUG | #5 DONE 0.0s
+23:38:43 | DEBUG | #5 resolve docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd done
+23:38:43 | DEBUG | #5 [1/9] FROM docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd
+23:38:43 | DEBUG | #4 DONE 0.0s
+23:38:43 | DEBUG | #4 [internal] load build context
+23:38:43 | DEBUG | #3 DONE 0.0s
+23:38:43 | DEBUG | #3 transferring context: 193B done
+23:38:43 | DEBUG | #3 [internal] load .dockerignore
+23:38:43 | DEBUG | #2 DONE 0.5s
+23:38:43 | DEBUG | #2 [internal] load metadata for docker.io/library/node:22-slim
+23:38:43 | DEBUG | #1 DONE 0.0s
+23:38:43 | DEBUG | #1 transferring dockerfile: 1.12kB done
+23:38:43 | DEBUG | #1 [internal] load build definition from Dockerfile
+23:38:43 | INFO | Build started
+23:38:43 | INFO | Build failed
+23:38:43 | INFO | error: failed to solve: process "/bin/sh -c if [ -f pnpm-lock.yaml ]; then       echo \"Detected pnpm workspace\";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo \"Detected npm project\";       npm ci --only=production;     else       echo \"No lockfile, fallback to basic install\";       npm install;     fi" did not complete successfully: exit code: 1
+23:38:43 | DEBUG | --------------------
+23:38:43 | DEBUG | 37 |
+23:38:43 | DEBUG | 36 | >>>     fi
+23:38:43 | DEBUG | 35 | >>>       npm install; \
+23:38:43 | DEBUG | 34 | >>>       echo "No lockfile, fallback to basic install"; \
+23:38:43 | DEBUG | 33 | >>>     else \
+23:38:43 | DEBUG | 32 | >>>       npm ci --only=production; \
+23:38:43 | DEBUG | 31 | >>>       echo "Detected npm project"; \
+23:38:43 | DEBUG | 30 | >>>     elif [ -f package-lock.json ]; then \
+23:38:43 | DEBUG | 29 | >>>       corepack use pnpm && pnpm install --frozen-lockfile --prod; \
+23:38:43 | DEBUG | 28 | >>>       echo "Detected pnpm workspace"; \
+23:38:43 | DEBUG | 27 | >>> RUN if [ -f pnpm-lock.yaml ]; then \
+23:38:43 | DEBUG | 26 |     # Detect and install dependencies
+23:38:43 | DEBUG | --------------------
+23:38:43 | DEBUG | Dockerfile:27
+23:38:43 | DEBUG | ------
+23:38:43 | DEBUG | 3.097 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-02T19_38_40_714Z-debug-0.log
+23:38:43 | DEBUG | 3.097 npm error Run "npm help ci" for more info
+23:38:43 | DEBUG | 3.097 npm error
+23:38:43 | DEBUG | 3.097 npm error aliases: clean-install, ic, install-clean, isntall-clean
+23:38:43 | DEBUG | 3.097 npm error
+23:38:43 | DEBUG | 3.097 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+23:38:43 | DEBUG | 3.097 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+23:38:43 | DEBUG | 3.097 npm error [--no-bin-links] [--no-fund] [--dry-run]
+23:38:43 | DEBUG | 3.097 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+23:38:43 | DEBUG | 3.097 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+23:38:58 | DEBUG | HEAD is now at 9d3df42 Fix case sensitivity issues in GoogleSheetsService imports
+23:38:58 | DEBUG | Turn off this advice by setting config variable advice.detachedHead to false
+23:38:58 | DEBUG | git switch -
+23:38:58 | DEBUG | Or undo this operation with:
+23:38:58 | DEBUG | git switch -c <new-branch-name>
+23:38:58 | DEBUG | do so (now or later) by using -c with the switch command. Example:
+23:38:58 | DEBUG | If you want to create a new branch to retain commits you create, you may
+23:38:58 | DEBUG | state without impacting any branches by switching back to a branch.
+23:38:58 | DEBUG | changes and commit them, and you can discard any commits you make in this
+23:38:58 | DEBUG | You are in 'detached HEAD' state. You can look around, make experimental
+23:38:58 | DEBUG | Note: switching to '9d3df42f8bb667654958f284230004498992ae2c'.
+23:38:58 | DEBUG | Updating files:  83% (7336/8761)Updating files:  84% (7360/8761)Updating files:  85% (7447/8761)Updating files:  86% (7535/8761)Updating files:  87% (7623/8761)Updating files:  88% (7710/8761)Updating files:  89% (7798/8761)Updating files:  90% (7885/8761)Updating files:  91% (7973/8761)Updating files:  92% (8061/8761)Updating files:  93% (8148/8761)Updating files:  94% (8236/8761)Updating files:  95% (8323/8761)Updating files:  96% (8411/8761)Updating files:  97% (8499/8761)Updating files:  98% (8586/8761)Updating files:  99% (8674/8761)Updating files: 100% (8761/8761)Updating files: 100% (8761/8761), done.
+23:38:58 | DEBUG | Cloning into '/workspace'...
+23:39:03 | DEBUG | #11 [3/9] RUN npm install -g pm2
+23:39:03 | DEBUG | #10 CACHED
+23:39:03 | DEBUG | #10 [2/9] RUN corepack enable
+23:39:03 | DEBUG | #9 CACHED
+23:39:03 | DEBUG | #9 [6/9] COPY package.json pnpm-lock.yaml* package-lock.json* pnpm-workspace.yaml* ./
+23:39:03 | DEBUG | #8 CACHED
+23:39:03 | DEBUG | #8 [5/9] WORKDIR /app
+23:39:03 | DEBUG | #4 DONE 0.2s
+23:39:03 | DEBUG | #4 transferring context: 653.40kB 0.1s done
+23:39:03 | DEBUG | #4 [internal] load build context
+23:39:03 | DEBUG | #5 DONE 0.0s
+23:39:03 | DEBUG | #5 [1/9] FROM docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd
+23:39:03 | DEBUG | #6 DONE 0.0s
+23:39:03 | DEBUG | #5 DONE 0.0s
+23:39:03 | DEBUG | #5 resolve docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd 0.0s done
+23:39:03 | DEBUG | #5 [1/9] FROM docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd
+23:39:03 | DEBUG | #4 DONE 0.0s
+23:39:03 | DEBUG | #4 [internal] load build context
+23:39:03 | DEBUG | #3 DONE 0.0s
+23:39:03 | DEBUG | #3 transferring context: 193B done
+23:39:03 | DEBUG | #3 [internal] load .dockerignore
+23:39:03 | DEBUG | #2 DONE 0.5s
+23:39:03 | DEBUG | #2 [internal] load metadata for docker.io/library/node:22-slim
+23:39:03 | DEBUG | #1 DONE 0.0s
+23:39:03 | DEBUG | #1 transferring dockerfile: 1.12kB 0.0s done
+23:39:03 | DEBUG | #1 [internal] load build definition from Dockerfile
+23:39:03 | INFO | Build started
+23:39:03 | DEBUG | #14 0.963 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+23:39:03 | DEBUG | #14 0.449 Detected npm project
+23:39:03 | DEBUG | #14 [8/9] RUN if [ -f pnpm-lock.yaml ]; then       echo "Detected pnpm workspace";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo "Detected npm project";       npm ci --only=production;     else       echo "No lockfile, fallback to basic install";       npm install;     fi
+23:39:03 | DEBUG | #13 CACHED
+23:39:03 | DEBUG | #13 [7/9] COPY --chown=app:app . .
+23:39:03 | DEBUG | #12 CACHED
+23:39:03 | DEBUG | #12 [4/9] RUN groupadd --gid 2000 app && useradd --uid 2000 --gid 2000 -m -s /bin/bash app
+23:39:03 | DEBUG | #11 CACHED
+23:39:06 | DEBUG | #14 4.510 npm error code EUSAGE
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pm2-axon@4.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pidusage@3.0.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: needle@2.4.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: js-yaml@4.1.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: fclone@1.0.11 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: eventemitter2@5.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: enquirer@2.3.6 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: dayjs@1.11.19 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: croner@4.1.97 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: commander@2.15.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: cli-tableau@2.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: chalk@3.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: blessed@0.1.81 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: async@3.2.6 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: @pm2/pm2-version-check@1.0.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: @pm2/js-api@0.8.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: @pm2/io@6.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: @pm2/agent@2.0.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pm2@5.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error
+23:39:06 | DEBUG | #14 4.510 npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+23:39:06 | DEBUG | #14 4.510 npm error
+23:39:06 | DEBUG | #14 4.510 npm error Missing: shimmer@1.2.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: semver@7.5.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: require-in-the-middle@5.2.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: eventemitter2@6.4.9 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.3.7 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: async@2.6.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ws@7.5.10 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: semver@7.5.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: proxy-agent@6.3.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: nssocket@0.6.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: fast-json-patch@3.1.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.3.7 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: dayjs@1.8.36 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: chalk@3.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: vizion@2.2.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: sprintf-js@1.1.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: source-map-support@0.5.21 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: promptly@2.2.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pm2-sysmonit@1.2.8 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pm2-multimeter@0.1.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pm2-deploy@1.0.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pm2-axon-rpc@0.7.1 from lock file
+23:39:06 | DEBUG | #14 ERROR: process "/bin/sh -c if [ -f pnpm-lock.yaml ]; then       echo \"Detected pnpm workspace\";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo \"Detected npm project\";       npm ci --only=production;     else       echo \"No lockfile, fallback to basic install\";       npm install;     fi" did not complete successfully: exit code: 1
+23:39:06 | DEBUG | #14 4.512 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-02T19_39_02_773Z-debug-0.log
+23:39:06 | DEBUG | #14 4.510 npm error Run "npm help ci" for more info
+23:39:06 | DEBUG | #14 4.510 npm error
+23:39:06 | DEBUG | #14 4.510 npm error aliases: clean-install, ic, install-clean, isntall-clean
+23:39:06 | DEBUG | #14 4.510 npm error
+23:39:06 | DEBUG | #14 4.510 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+23:39:06 | DEBUG | #14 4.510 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+23:39:06 | DEBUG | #14 4.510 npm error [--no-bin-links] [--no-fund] [--dry-run]
+23:39:06 | DEBUG | #14 4.510 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+23:39:06 | DEBUG | #14 4.510 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+23:39:06 | DEBUG | #14 4.510 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+23:39:06 | DEBUG | #14 4.510 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+23:39:06 | DEBUG | #14 4.510 npm error Options:
+23:39:06 | DEBUG | #14 4.510 npm error
+23:39:06 | DEBUG | #14 4.510 npm error npm ci
+23:39:06 | DEBUG | #14 4.510 npm error Usage:
+23:39:06 | DEBUG | #14 4.510 npm error
+23:39:06 | DEBUG | #14 4.510 npm error Clean install a project
+23:39:06 | DEBUG | #14 4.510 npm error
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: has-flag@4.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: supports-color@7.2.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ansi-styles@4.3.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: has-flag@4.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: supports-color@7.2.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ansi-styles@4.3.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: has-flag@4.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ms@2.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: color-name@1.1.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: color-convert@2.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: supports-color@7.2.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ansi-styles@4.3.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pako@0.2.9 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: git-sha1@0.1.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: culvert@0.1.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: bodec@0.1.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: js-git@0.7.8 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: git-node-fs@1.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: async@2.6.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: json-stringify-safe@5.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: buffer-from@1.1.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: supports-preserve-symlinks-flag@1.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: path-parse@1.0.7 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: is-core-module@2.16.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: resolve@1.22.11 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: module-details-from-path@1.0.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: source-map@0.6.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: esutils@2.0.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: estraverse@5.3.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: esprima@4.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: escodegen@2.1.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ast-types@0.13.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: netmask@2.0.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: degenerator@5.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: data-uri-to-buffer@6.0.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: basic-ftp@5.0.5 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: socks-proxy-agent@8.0.5 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pac-resolver@7.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: http-proxy-agent@7.0.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: get-uri@6.0.5 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: @tootallnate/quickjs-emscripten@0.23.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: socks-proxy-agent@8.0.5 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pac-proxy-agent@7.2.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: lru-cache@7.18.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: http-proxy-agent@7.0.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: read@1.0.7 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: tx2@1.0.5 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: systeminformation@5.27.11 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: pidusage@2.0.21 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: charm@0.1.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: tv4@1.3.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: run-series@1.1.9 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: escape-string-regexp@4.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: amp-message@0.1.2 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: amp@0.3.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: lazy@1.0.11 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: eventemitter2@0.4.14 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: sax@1.4.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@3.2.7 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: argparse@2.0.1 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: ansi-colors@4.1.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: chalk@3.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.4.3 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: extrareqp2@1.0.0 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: eventemitter2@6.4.9 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: debug@4.3.7 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: async@2.6.4 from lock file
+23:39:06 | DEBUG | #14 4.510 npm error Missing: tslib@1.9.3 from lock file
+23:39:06 | DEBUG | ------
+23:39:06 | DEBUG | 4.512 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-02T19_39_02_773Z-debug-0.log
+23:39:06 | DEBUG | 4.510 npm error Run "npm help ci" for more info
+23:39:06 | DEBUG | 4.510 npm error
+23:39:06 | DEBUG | 4.510 npm error aliases: clean-install, ic, install-clean, isntall-clean
+23:39:06 | DEBUG | 4.510 npm error
+23:39:06 | DEBUG | 4.510 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+23:39:06 | DEBUG | 4.510 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+23:39:06 | DEBUG | 4.510 npm error [--no-bin-links] [--no-fund] [--dry-run]
+23:39:06 | DEBUG | 4.510 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+23:39:06 | DEBUG | 4.510 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+23:39:06 | DEBUG | > [8/9] RUN if [ -f pnpm-lock.yaml ]; then       echo "Detected pnpm workspace";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo "Detected npm project";       npm ci --only=production;     else       echo "No lockfile, fallback to basic install";       npm install;     fi:
+23:39:06 | DEBUG | ------
+23:39:06 | DEBUG | ------
+23:39:06 | DEBUG | ------
+23:39:06 | INFO | error: failed to solve: process "/bin/sh -c if [ -f pnpm-lock.yaml ]; then       echo \"Detected pnpm workspace\";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo \"Detected npm project\";       npm ci --only=production;     else       echo \"No lockfile, fallback to basic install\";       npm install;     fi" did not complete successfully: exit code: 1
+23:39:06 | DEBUG | --------------------
+23:39:06 | DEBUG | 37 |
+23:39:06 | DEBUG | 36 | >>>     fi
+23:39:06 | DEBUG | 35 | >>>       npm install; \
+23:39:06 | DEBUG | 34 | >>>       echo "No lockfile, fallback to basic install"; \
+23:39:06 | DEBUG | 33 | >>>     else \
+23:39:06 | DEBUG | 32 | >>>       npm ci --only=production; \
+23:39:06 | DEBUG | 31 | >>>       echo "Detected npm project"; \
+23:39:06 | DEBUG | 30 | >>>     elif [ -f package-lock.json ]; then \
+23:39:06 | DEBUG | 29 | >>>       corepack use pnpm && pnpm install --frozen-lockfile --prod; \
+23:39:06 | DEBUG | 28 | >>>       echo "Detected pnpm workspace"; \
+23:39:06 | DEBUG | 27 | >>> RUN if [ -f pnpm-lock.yaml ]; then \
+23:39:06 | DEBUG | 26 |     # Detect and install dependencies
+23:39:06 | DEBUG | --------------------
+23:39:06 | DEBUG | Dockerfile:27
+23:39:06 | INFO | Build failed
+23:39:28 | DEBUG | Cloning into '/workspace'...
+23:39:30 | DEBUG | Updating files:  84% (7397/8761)Updating files:  85% (7447/8761)Updating files:  86% (7535/8761)Updating files:  87% (7623/8761)Updating files:  88% (7710/8761)Updating files:  89% (7798/8761)Updating files:  90% (7885/8761)Updating files:  91% (7973/8761)Updating files:  92% (8061/8761)Updating files:  93% (8148/8761)Updating files:  94% (8236/8761)Updating files:  95% (8323/8761)Updating files:  96% (8411/8761)Updating files:  97% (8499/8761)Updating files:  98% (8586/8761)Updating files:  99% (8674/8761)Updating files: 100% (8761/8761)Updating files: 100% (8761/8761), done.
+23:39:31 | DEBUG | changes and commit them, and you can discard any commits you make in this
+23:39:31 | DEBUG | You are in 'detached HEAD' state. You can look around, make experimental
+23:39:31 | DEBUG | Note: switching to '9d3df42f8bb667654958f284230004498992ae2c'.
+23:39:31 | DEBUG | HEAD is now at 9d3df42 Fix case sensitivity issues in GoogleSheetsService imports
+23:39:31 | DEBUG | Turn off this advice by setting config variable advice.detachedHead to false
+23:39:31 | DEBUG | git switch -
+23:39:31 | DEBUG | Or undo this operation with:
+23:39:31 | DEBUG | git switch -c <new-branch-name>
+23:39:31 | DEBUG | do so (now or later) by using -c with the switch command. Example:
+23:39:31 | DEBUG | If you want to create a new branch to retain commits you create, you may
+23:39:31 | DEBUG | state without impacting any branches by switching back to a branch.
+23:39:33 | DEBUG | #6 DONE 0.0s
+23:39:33 | DEBUG | #5 DONE 0.0s
+23:39:33 | DEBUG | #5 resolve docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd done
+23:39:33 | DEBUG | #5 [1/9] FROM docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd
+23:39:33 | DEBUG | #4 DONE 0.0s
+23:39:33 | DEBUG | #4 [internal] load build context
+23:39:33 | DEBUG | #3 DONE 0.0s
+23:39:33 | DEBUG | #3 transferring context: 193B done
+23:39:33 | DEBUG | #3 [internal] load .dockerignore
+23:39:33 | DEBUG | #2 DONE 1.0s
+23:39:33 | DEBUG | #2 [internal] load metadata for docker.io/library/node:22-slim
+23:39:33 | DEBUG | #1 DONE 0.0s
+23:39:33 | DEBUG | #1 transferring dockerfile: 1.12kB done
+23:39:33 | DEBUG | #1 [internal] load build definition from Dockerfile
+23:39:33 | INFO | Build started
+23:39:34 | DEBUG | #9 CACHED
+23:39:34 | DEBUG | #9 [6/9] COPY package.json pnpm-lock.yaml* package-lock.json* pnpm-workspace.yaml* ./
+23:39:34 | DEBUG | #8 CACHED
+23:39:34 | DEBUG | #8 [3/9] RUN npm install -g pm2
+23:39:34 | DEBUG | #4 DONE 0.0s
+23:39:34 | DEBUG | #4 transferring context: 653.40kB 0.0s done
+23:39:34 | DEBUG | #4 [internal] load build context
+23:39:34 | DEBUG | #5 DONE 0.0s
+23:39:34 | DEBUG | #5 [1/9] FROM docker.io/library/node:22-slim@sha256:7e3a5fac109e00e9f2616cd24f5227e2eb0d473bf33b98d661b0c1862f6bfbbd
+23:39:34 | DEBUG | #14 0.056 Detected npm project
+23:39:34 | DEBUG | #14 [8/9] RUN if [ -f pnpm-lock.yaml ]; then       echo "Detected pnpm workspace";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo "Detected npm project";       npm ci --only=production;     else       echo "No lockfile, fallback to basic install";       npm install;     fi
+23:39:34 | DEBUG | #13 CACHED
+23:39:34 | DEBUG | #13 [7/9] COPY --chown=app:app . .
+23:39:34 | DEBUG | #12 CACHED
+23:39:34 | DEBUG | #12 [5/9] WORKDIR /app
+23:39:34 | DEBUG | #11 CACHED
+23:39:34 | DEBUG | #11 [4/9] RUN groupadd --gid 2000 app && useradd --uid 2000 --gid 2000 -m -s /bin/bash app
+23:39:34 | DEBUG | #10 CACHED
+23:39:34 | DEBUG | #10 [2/9] RUN corepack enable
+23:39:34 | DEBUG | #14 0.144 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+23:39:37 | DEBUG | #14 2.919 npm error code EUSAGE
+23:39:37 | DEBUG | #14 2.919 npm error Missing: dayjs@1.8.36 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: chalk@3.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: vizion@2.2.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: sprintf-js@1.1.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: source-map-support@0.5.21 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: promptly@2.2.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pm2-sysmonit@1.2.8 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pm2-multimeter@0.1.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pm2-deploy@1.0.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pm2-axon-rpc@0.7.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pm2-axon@4.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pidusage@3.0.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: needle@2.4.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: js-yaml@4.1.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: fclone@1.0.11 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: eventemitter2@5.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: enquirer@2.3.6 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: dayjs@1.11.19 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: croner@4.1.97 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: commander@2.15.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: cli-tableau@2.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: chalk@3.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: blessed@0.1.81 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: async@3.2.6 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: @pm2/pm2-version-check@1.0.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: @pm2/js-api@0.8.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: @pm2/io@6.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: @pm2/agent@2.0.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pm2@5.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error
+23:39:37 | DEBUG | #14 2.919 npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+23:39:37 | DEBUG | #14 2.919 npm error
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.3.7 from lock file
+23:39:37 | DEBUG | #14 ERROR: process "/bin/sh -c if [ -f pnpm-lock.yaml ]; then       echo \"Detected pnpm workspace\";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo \"Detected npm project\";       npm ci --only=production;     else       echo \"No lockfile, fallback to basic install\";       npm install;     fi" did not complete successfully: exit code: 1
+23:39:37 | DEBUG | #14 2.921 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-02T19_39_34_233Z-debug-0.log
+23:39:37 | DEBUG | #14 2.919 npm error Run "npm help ci" for more info
+23:39:37 | DEBUG | #14 2.919 npm error
+23:39:37 | DEBUG | #14 2.919 npm error aliases: clean-install, ic, install-clean, isntall-clean
+23:39:37 | DEBUG | #14 2.919 npm error
+23:39:37 | DEBUG | #14 2.919 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+23:39:37 | DEBUG | #14 2.919 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+23:39:37 | DEBUG | #14 2.919 npm error [--no-bin-links] [--no-fund] [--dry-run]
+23:39:37 | DEBUG | #14 2.919 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+23:39:37 | DEBUG | #14 2.919 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+23:39:37 | DEBUG | #14 2.919 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+23:39:37 | DEBUG | #14 2.919 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+23:39:37 | DEBUG | #14 2.919 npm error Options:
+23:39:37 | DEBUG | #14 2.919 npm error
+23:39:37 | DEBUG | #14 2.919 npm error npm ci
+23:39:37 | DEBUG | #14 2.919 npm error Usage:
+23:39:37 | DEBUG | #14 2.919 npm error
+23:39:37 | DEBUG | #14 2.919 npm error Clean install a project
+23:39:37 | DEBUG | #14 2.919 npm error
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: has-flag@4.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: supports-color@7.2.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ansi-styles@4.3.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: has-flag@4.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: supports-color@7.2.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ansi-styles@4.3.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: has-flag@4.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ms@2.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: color-name@1.1.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: color-convert@2.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: supports-color@7.2.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ansi-styles@4.3.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pako@0.2.9 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: git-sha1@0.1.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: culvert@0.1.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: bodec@0.1.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: js-git@0.7.8 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: git-node-fs@1.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: async@2.6.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: json-stringify-safe@5.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: buffer-from@1.1.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: supports-preserve-symlinks-flag@1.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: path-parse@1.0.7 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: is-core-module@2.16.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: resolve@1.22.11 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: module-details-from-path@1.0.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: source-map@0.6.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: esutils@2.0.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: estraverse@5.3.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: esprima@4.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: escodegen@2.1.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ast-types@0.13.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: netmask@2.0.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: degenerator@5.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: data-uri-to-buffer@6.0.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: basic-ftp@5.0.5 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: socks-proxy-agent@8.0.5 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pac-resolver@7.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: http-proxy-agent@7.0.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: get-uri@6.0.5 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: @tootallnate/quickjs-emscripten@0.23.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: socks-proxy-agent@8.0.5 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pac-proxy-agent@7.2.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: lru-cache@7.18.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: http-proxy-agent@7.0.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: read@1.0.7 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: tx2@1.0.5 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: systeminformation@5.27.11 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: pidusage@2.0.21 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: charm@0.1.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: tv4@1.3.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: run-series@1.1.9 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: escape-string-regexp@4.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: amp-message@0.1.2 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: amp@0.3.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: lazy@1.0.11 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: eventemitter2@0.4.14 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: sax@1.4.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@3.2.7 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: argparse@2.0.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ansi-colors@4.1.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: chalk@3.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.4.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: extrareqp2@1.0.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: eventemitter2@6.4.9 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.3.7 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: async@2.6.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: tslib@1.9.3 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: shimmer@1.2.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: semver@7.5.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: require-in-the-middle@5.2.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: eventemitter2@6.4.9 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: debug@4.3.7 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: async@2.6.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: ws@7.5.10 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: semver@7.5.4 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: proxy-agent@6.3.1 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: nssocket@0.6.0 from lock file
+23:39:37 | DEBUG | #14 2.919 npm error Missing: fast-json-patch@3.1.1 from lock file
+23:39:37 | DEBUG | ------
+23:39:37 | DEBUG | 2.921 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-02T19_39_34_233Z-debug-0.log
+23:39:37 | DEBUG | 2.919 npm error Run "npm help ci" for more info
+23:39:37 | DEBUG | 2.919 npm error
+23:39:37 | DEBUG | 2.919 npm error aliases: clean-install, ic, install-clean, isntall-clean
+23:39:37 | DEBUG | 2.919 npm error
+23:39:37 | DEBUG | 2.919 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+23:39:37 | DEBUG | 2.919 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+23:39:37 | DEBUG | 2.919 npm error [--no-bin-links] [--no-fund] [--dry-run]
+23:39:37 | DEBUG | 2.919 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+23:39:37 | DEBUG | 2.919 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+23:39:37 | DEBUG | > [8/9] RUN if [ -f pnpm-lock.yaml ]; then       echo "Detected pnpm workspace";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo "Detected npm project";       npm ci --only=production;     else       echo "No lockfile, fallback to basic install";       npm install;     fi:
+23:39:37 | DEBUG | ------
+23:39:37 | DEBUG | ------
+23:39:37 | DEBUG | ------
+23:39:37 | INFO | error: failed to solve: process "/bin/sh -c if [ -f pnpm-lock.yaml ]; then       echo \"Detected pnpm workspace\";       corepack use pnpm && pnpm install --frozen-lockfile --prod;     elif [ -f package-lock.json ]; then       echo \"Detected npm project\";       npm ci --only=production;     else       echo \"No lockfile, fallback to basic install\";       npm install;     fi" did not complete successfully: exit code: 1
+23:39:37 | DEBUG | --------------------
+23:39:37 | DEBUG | 37 |
+23:39:37 | DEBUG | 36 | >>>     fi
+23:39:37 | DEBUG | 35 | >>>       npm install; \
+23:39:37 | DEBUG | 34 | >>>       echo "No lockfile, fallback to basic install"; \
+23:39:37 | DEBUG | 33 | >>>     else \
+23:39:37 | DEBUG | 32 | >>>       npm ci --only=production; \
+23:39:37 | DEBUG | 31 | >>>       echo "Detected npm project"; \
+23:39:37 | DEBUG | 30 | >>>     elif [ -f package-lock.json ]; then \
+23:39:37 | DEBUG | 29 | >>>       corepack use pnpm && pnpm install --frozen-lockfile --prod; \
+23:39:37 | DEBUG | 28 | >>>       echo "Detected pnpm workspace"; \
+23:39:37 | DEBUG | 27 | >>> RUN if [ -f pnpm-lock.yaml ]; then \
+23:39:37 | DEBUG | 26 |     # Detect and install dependencies
+23:39:37 | DEBUG | --------------------
+23:39:37 | DEBUG | Dockerfile:27
+23:39:37 | INFO | Build failed

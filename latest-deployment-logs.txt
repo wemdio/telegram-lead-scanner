@@ -1,0 +1,185 @@
+01:26:18 | DEBUG | HEAD is now at 44936ad Fix EACCES permission denied error - remove server-port.txt file writing for backend deployment
+01:26:18 | DEBUG | Turn off this advice by setting config variable advice.detachedHead to false
+01:26:18 | DEBUG | git switch -
+01:26:18 | DEBUG | Or undo this operation with:
+01:26:18 | DEBUG | git switch -c <new-branch-name>
+01:26:18 | DEBUG | do so (now or later) by using -c with the switch command. Example:
+01:26:18 | DEBUG | If you want to create a new branch to retain commits you create, you may
+01:26:18 | DEBUG | state without impacting any branches by switching back to a branch.
+01:26:18 | DEBUG | changes and commit them, and you can discard any commits you make in this
+01:26:18 | DEBUG | You are in 'detached HEAD' state. You can look around, make experimental
+01:26:18 | DEBUG | Note: switching to '44936adbf5a8541372ed39463e0f2890993871b5'.
+01:26:18 | DEBUG | Updating files:  99% (8741/8761)Updating files: 100% (8761/8761)Updating files: 100% (8761/8761), done.
+01:26:18 | DEBUG | Cloning into '/workspace'...
+01:26:23 | DEBUG | #9 [5/6] RUN npm install
+01:26:23 | DEBUG | #8 DONE 1.4s
+01:26:23 | DEBUG | #8 0.557 npm warn using --force Recommended protections disabled.
+01:26:23 | DEBUG | #8 [4/6] RUN npm cache clean --force
+01:26:23 | DEBUG | #7 DONE 0.2s
+01:26:23 | DEBUG | #7 [3/6] COPY package*.json ./
+01:26:23 | DEBUG | #6 CACHED
+01:26:23 | DEBUG | #6 [2/6] WORKDIR /app
+01:26:23 | DEBUG | #5 DONE 0.1s
+01:26:23 | DEBUG | #5 transferring context: 704.78kB 0.0s done
+01:26:23 | DEBUG | #5 [internal] load build context
+01:26:23 | DEBUG | #4 DONE 0.0s
+01:26:23 | DEBUG | #4 resolve docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e 0.0s done
+01:26:23 | DEBUG | #4 [1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+01:26:23 | DEBUG | #3 DONE 0.0s
+01:26:23 | DEBUG | #3 transferring context: 193B done
+01:26:23 | DEBUG | #3 [internal] load .dockerignore
+01:26:23 | DEBUG | #2 DONE 0.4s
+01:26:23 | DEBUG | #2 [internal] load metadata for docker.io/library/node:18-alpine
+01:26:23 | DEBUG | #1 DONE 0.0s
+01:26:23 | DEBUG | #1 transferring dockerfile: 605B done
+01:26:23 | DEBUG | #1 [internal] load build definition from Dockerfile
+01:26:23 | INFO | Build started
+01:26:24 | DEBUG | #9 3.041 npm warn deprecated yaeti@0.0.6: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+01:26:24 | DEBUG | #9 3.536 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+01:26:25 | DEBUG | #9 3.880 npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+01:26:25 | DEBUG | #9 4.243 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+01:26:25 | DEBUG | #9 4.369 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+01:26:25 | DEBUG | #9 4.580 npm warn deprecated gauge@4.0.4: This package is no longer supported.
+01:26:26 | DEBUG | #9 5.082 npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+01:26:26 | DEBUG | #9 5.385 npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+01:26:28 | DEBUG | #9 7.200 npm warn deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+01:26:31 | DEBUG | #9 10.17   run `npm fund` for details
+01:26:31 | DEBUG | #9 10.17 50 packages are looking for funding
+01:26:31 | DEBUG | #9 10.17
+01:26:31 | DEBUG | #9 10.17 added 471 packages, and audited 472 packages in 10s
+01:26:31 | DEBUG | #9 10.17
+01:26:31 | DEBUG | #9 10.18 Run `npm audit` for details.
+01:26:31 | DEBUG | #9 10.18
+01:26:31 | DEBUG | #9 10.18   npm audit fix --force
+01:26:31 | DEBUG | #9 10.18 To address all issues (including breaking changes), run:
+01:26:31 | DEBUG | #9 10.18
+01:26:31 | DEBUG | #9 10.18   npm audit fix
+01:26:31 | DEBUG | #9 10.18 To address issues that do not require attention, run:
+01:26:31 | DEBUG | #9 10.18
+01:26:31 | DEBUG | #9 10.18 2 vulnerabilities (1 low, 1 high)
+01:26:31 | DEBUG | #9 10.18
+01:26:31 | DEBUG | #9 DONE 10.3s
+01:26:31 | DEBUG | #10 [6/6] COPY . .
+01:26:31 | DEBUG | #10 DONE 0.4s
+01:26:32 | DEBUG | #11 exporting layers
+01:26:32 | DEBUG | #11 exporting to image
+01:26:38 | DEBUG | #11 exporting layers 6.8s done
+01:26:38 | DEBUG | #11 pushing layers
+01:26:38 | DEBUG | #11 exporting config sha256:f619b3e0750939f90fc41a5e2ba688e51352efb2e1f7df6a9ff0d9fc77660899 done
+01:26:38 | DEBUG | #11 exporting manifest sha256:49224a53d7825172319d8a39780b3397b54a4dbee79cf2a70332cf15afcb9473 done
+01:26:38 | DEBUG | #11 exporting to image
+01:26:38 | DEBUG | #12 DONE 0.0s
+01:26:38 | DEBUG | #11 ...
+01:26:39 | DEBUG | #11 ...
+01:26:39 | DEBUG | #13 DONE 0.0s
+01:26:39 | DEBUG | #11 exporting to image
+01:26:53 | DEBUG | #11 pushing layers 14.8s done
+01:26:55 | DEBUG | #11 DONE 23.2s
+01:26:55 | INFO | Build succeeded
+01:31:42 | INFO | Pulling image from registry
+01:31:56 | INFO | Successfully pulled
+01:31:56 | INFO | Starting container
+01:31:57 | INFO | Container started
+01:31:57 | INFO | Checking app's health
+01:32:12 | ERROR | Container 0922a2e8-e94e-4071-8df5-ca640652256c_4d1df2db-da66-4cc3-baf6-dea61886d926 not running: , Exit Code: 1, Failed container logs (last 100 lines):
+
+Node.js v18.20.8
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/docker'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/docker'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/docker'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/docker'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/docker'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/docker'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/docker'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+01:32:12 | ERROR | Deploy failed
