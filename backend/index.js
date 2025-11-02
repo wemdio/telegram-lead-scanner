@@ -151,10 +151,12 @@ const corsOptions = {
           'https://wemdio-telegram-lead-scanner-63d0.twc1.net',
           'https://wemdio-telegram-lead-scanner-2bed.twc1.net',
           'https://wemdio-telegram-lead-scanner-a011.twc1.net',
+          'https://wemdio-telegram-lead-scanner-86ab.twc1.net',
+          'https://wemdio-telegram-lead-scanner-1405.twc1.net',
           'http://localhost:5173', 
           'http://localhost:5174'
         ]
-      : ['http://localhost:5173', 'http://localhost:5174'];
+      : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'];
     
     console.log('🔧 CORS: Allowed origins:', allowedOrigins);
     
@@ -167,9 +169,26 @@ const corsOptions = {
     }
   },
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+  exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar']
 };
 app.use(cors(corsOptions));
+
+// Additional CORS headers for preflight requests
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
 
 // Body parsing middleware with UTF-8 encoding
 app.use(express.json({ limit: '10mb', charset: 'utf-8' }));

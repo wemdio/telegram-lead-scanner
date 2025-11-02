@@ -31,7 +31,7 @@ function getApiBaseUrl(): string {
     // Если мы в продакшене (развернутое приложение), используем развернутый бэкенд
     if (isProduction && !isLocalhost) {
       console.log('🔧 Production environment detected - using deployed backend');
-      return 'https://wemdio-telegram-lead-scanner-2bed.twc1.net/api';
+      return 'https://wemdio-telegram-lead-scanner-86ab.twc1.net/api';
     }
     
     // Check if running from file:// protocol (Electron)
