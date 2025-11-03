@@ -1,0 +1,18 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="#0088cc" stroke="#ffffff" stroke-width="8"/>
+  
+  <!-- Telegram-style paper plane -->
+  <path d="M80 128L176 80L144 176L112 144L80 128Z" fill="#ffffff"/>
+  <path d="M112 144L128 160L144 176L112 144Z" fill="#d6e8f5"/>
+  
+  <!-- AI/Search elements -->
+  <circle cx="180" cy="76" r="12" fill="#ff6b35" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="200" cy="96" r="8" fill="#4ecdc4" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="160" cy="96" r="6" fill="#45b7d1" stroke="#ffffff" stroke-width="1"/>
+  
+  <!-- Scanner lines -->
+  <line x1="60" y1="180" x2="120" y2="180" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="190" x2="100" y2="190" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="200" x2="110" y2="200" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+</svg>
