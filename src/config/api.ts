@@ -31,13 +31,13 @@ function getApiBaseUrl(): string {
     // Для production веб-версии используем Timeweb backend
     if (isProduction && !isElectron) {
       console.log('🔧 Production web environment - using Timeweb backend');
-      return 'http://185.104.249.138:3001/api';
+      return 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api';
     }
     
     // Если мы в продакшене (развернутое приложение), используем развернутый бэкенд
     if (isProduction && !isLocalhost) {
       console.log('🔧 Production environment detected - using deployed backend');
-      return 'https://wemdio-telegram-lead-scanner-86ab.twc1.net/api';
+      return 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api';
     }
     
     // Check if running from file:// protocol (Electron)
