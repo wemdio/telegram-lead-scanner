@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// Импортируем хранилище лидов из leads.js
-const leadsModule = require('./leads.js');
+// Импортируем хранилище лидов из leads.cjs
+const leadsModule = require('./leads.cjs');
 
 // Обновить статус отправки лида
 router.post('/update-sent', (req, res) => {

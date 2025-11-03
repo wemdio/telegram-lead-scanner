@@ -3,8 +3,8 @@ const { TelegramClient, Api } = require('telegram');
 const { StringSession } = require('telegram/sessions');
 const fs = require('fs');
 const path = require('path');
-const { convertTDataToStringSession } = require('../tdata-converter');
-const PyrogramConverter = require('../pyrogram-converter');
+const { convertTDataToStringSession } = require('../backend/tdata-converter');
+const PyrogramConverter = require('../backend/pyrogram-converter');
 const router = express.Router();
 
 let telegramClient = null;

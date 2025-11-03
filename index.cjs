@@ -10,16 +10,16 @@ if (process.env.NODE_ENV !== 'production' && !process.env.PORT) {
   require('dotenv').config();
 }
 
-const telegramRoutes = require('./routes/telegram');
-const telegramBotRoutes = require('./routes/telegram-bot');
-const sheetsRoutes = require('./routes/sheets');
-const sheetsTestRoutes = require('./routes/sheets-test');
-const scannerRoutes = require('./routes/scanner');
-const leadsRoutes = require('./routes/leads');
-const leadsUpdateRoutes = require('./routes/leads-update');
-const cronRoutes = require('./routes/cron');
-const sheetsUpdateRoutes = require('./routes/sheets-update');
-const settingsRoutes = require('./routes/settings');
+const telegramRoutes = require('./routes/telegram.cjs');
+const telegramBotRoutes = require('./routes/telegram-bot.cjs');
+const sheetsRoutes = require('./routes/sheets.cjs');
+const sheetsTestRoutes = require('./routes/sheets-test.cjs');
+const scannerRoutes = require('./routes/scanner.cjs');
+const leadsRoutes = require('./routes/leads.cjs');
+const leadsUpdateRoutes = require('./routes/leads-update.cjs');
+const cronRoutes = require('./routes/cron.cjs');
+const sheetsUpdateRoutes = require('./routes/sheets-update.cjs');
+const settingsRoutes = require('./routes/settings.cjs');
 
 // Функция для проверки и запуска автоанализа при старте сервера
 async function checkAndTriggerAutoAnalysis() {

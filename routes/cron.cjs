@@ -1,7 +1,7 @@
 const express = require('express');
 const cron = require('node-cron');
 const axios = require('axios');
-const { getGoogleSheetsClient } = require('../services/googleSheetsService');
+const { getGoogleSheetsClient } = require('../services/googleSheetsService.cjs');
 
 const router = express.Router();
 

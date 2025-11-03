@@ -140,11 +140,11 @@ class GoogleSheetsService {
         }
       });
 
-      console.log(`✅ Successfully read settings from ${sheetName}`);
+      console.log('✅ Settings read from sheet successfully');
       return { success: true, settings };
       
     } catch (error) {
-      console.error(`❌ Failed to read settings from sheet:`, error);
+      console.error('❌ Failed to read settings from sheet:', error);
       throw error;
     }
   }
@@ -156,55 +156,26 @@ class GoogleSheetsService {
       }
 
       if (this.sheetsClient.mock) {
-        console.log(`📋 Mock: Appending to sheet ${sheetName}:`, values);
+        console.log(`📋 Mock: Appending ${values.length} rows to ${sheetName}`);
         return { success: true, mock: true };
       }
 
-      const range = `${sheetName}!A:Z`;
+      const range = `${sheetName}!A:A`;
       
       const response = await this.sheetsClient.spreadsheets.values.append({
         spreadsheetId,
         range,
         valueInputOption: 'RAW',
         resource: {
-          values: [values]
+          values: values
         }
       });
 
-      console.log(`✅ Successfully appended to sheet ${sheetName}`);
+      console.log(`✅ Successfully appended ${values.length} rows to ${sheetName}`);
       return { success: true, response: response.data };
       
     } catch (error) {
       console.error(`❌ Failed to append to sheet ${sheetName}:`, error);
-      throw error;
-    }
-  }
-
-  async updateCell(spreadsheetId, sheetName, range, value) {
-    try {
-      if (!this.sheetsClient) {
-        throw new Error('GoogleSheetsService not initialized');
-      }
-
-      if (this.sheetsClient.mock) {
-        console.log(`📋 Mock: Updating cell ${sheetName}!${range} with value:`, value);
-        return { success: true, mock: true };
-      }
-
-      const response = await this.sheetsClient.spreadsheets.values.update({
-        spreadsheetId,
-        range: `${sheetName}!${range}`,
-        valueInputOption: 'RAW',
-        resource: {
-          values: [[value]]
-        }
-      });
-
-      console.log(`✅ Successfully updated cell ${sheetName}!${range}`);
-      return { success: true, response: response.data };
-      
-    } catch (error) {
-      console.error(`❌ Failed to update cell ${sheetName}!${range}:`, error);
       throw error;
     }
   }
@@ -269,104 +240,40 @@ class GoogleSheetsService {
   }
 
   async ensureSheetExists(spreadsheetId, sheetName) {
-    if (this.isMockMode()) {
-      console.log(`Mock: Ensuring sheet ${sheetName} exists`);
-      return;
-    }
-    const res = await this.sheetsClient.spreadsheets.get({
-      spreadsheetId,
-      fields: 'sheets.properties.title',
-    });
-    const sheets = res.data.sheets || [];
-    const exists = sheets.some((s) => s.properties.title === sheetName);
-    if (!exists) {
-      await this.sheetsClient.spreadsheets.batchUpdate({
-        spreadsheetId,
-        resource: {
-          requests: [
-            {
-              addSheet: {
-                properties: {
-                  title: sheetName,
-                },
-              },
-            },
-          ],
-        },
-      });
-      console.log(`Created sheet ${sheetName}`);
-    } else {
-      console.log(`Sheet ${sheetName} already exists`);
-    }
-  }
-  
-  async addHeadersIfMissing(spreadsheetId, sheetName, headers) {
-    if (this.isMockMode()) {
-      console.log(`Mock: Adding headers if missing to ${sheetName}`);
-      return;
-    }
-    const range = `${sheetName}!A1:${String.fromCharCode(64 + headers.length)}1`;
-    let currentHeaders;
     try {
-      const res = await this.sheetsClient.spreadsheets.values.get({
-        spreadsheetId,
-        range,
-      });
-      currentHeaders = res.data.values ? res.data.values[0] : [];
-    } catch (error) {
-      if (error.response && error.response.status === 400) {
-        currentHeaders = [];
-      } else {
+      if (!this.sheetsClient) {
+        throw new Error('GoogleSheetsService not initialized');
+      }
+
+      if (this.sheetsClient.mock) {
+        console.log(`📋 Mock: Ensuring sheet ${sheetName} exists`);
+        return { success: true, mock: true };
+      }
+
+      // Try to get sheet info
+      try {
+        await this.sheetsClient.spreadsheets.get({
+          spreadsheetId,
+          ranges: [`${sheetName}!A1`]
+        });
+        console.log(`✅ Sheet ${sheetName} already exists`);
+        return { success: true, exists: true };
+      } catch (error) {
+        if (error.code === 400) {
+          // Sheet doesn't exist, create it
+          console.log(`📋 Creating sheet ${sheetName}...`);
+          await this.createSheet(spreadsheetId, sheetName);
+          return { success: true, created: true };
+        }
         throw error;
       }
-    }
-    if (currentHeaders.length === 0) {
-      await this.sheetsClient.spreadsheets.values.update({
-        spreadsheetId,
-        range,
-        valueInputOption: 'RAW',
-        resource: {
-          values: [headers],
-        },
-      });
-      console.log(`Added headers to ${sheetName}`);
+      
+    } catch (error) {
+      console.error(`❌ Failed to ensure sheet ${sheetName} exists:`, error);
+      throw error;
     }
   }
-  
-  async appendLeads(spreadsheetId, sheetName, leads) {
-    if (!this.isInitialized()) {
-      throw new Error('Service not initialized');
-    }
-    if (this.isMockMode()) {
-      console.log(`Mock: Appending ${leads.length} leads to ${sheetName}`);
-      return { appended: leads.length };
-    }
-    await this.ensureSheetExists(spreadsheetId, sheetName);
-    const headers = ['Время', 'Имя', 'Юзернейм', 'Канал', 'Сообщение', 'Причина', 'Уверенность', 'Отправлено'];
-    await this.addHeadersIfMissing(spreadsheetId, sheetName, headers);
-    const values = leads.map((lead) => [
-      lead.timestamp || new Date().toISOString(),
-      lead.name || '',
-      lead.username || '',
-      lead.channel || '',
-      lead.message || '',
-      lead.reason || '',
-      lead.confidence || 0,
-      lead.sent ? 'Да' : 'Нет',
-    ]);
-    await this.sheetsClient.spreadsheets.values.append({
-      spreadsheetId,
-      range: `${sheetName}!A1`,
-      valueInputOption: 'RAW',
-      insertDataOption: 'INSERT_ROWS',
-      resource: {
-        values,
-      },
-    });
-    console.log(`Appended ${leads.length} leads to ${sheetName}`);
-    return { appended: leads.length };
-  }
-  
+
   async getLeads(spreadsheetId, sheetName = 'Лиды') {
     if (!this.isInitialized()) {
       throw new Error('Service not initialized');
@@ -402,5 +309,10 @@ class GoogleSheetsService {
   }
 }
 
-// Экспортируем класс как default export
 module.exports = GoogleSheetsService;
+
+// Экспортируем также функцию для совместимости
+module.exports.getGoogleSheetsClient = () => {
+  const service = new GoogleSheetsService();
+  return service;
+};

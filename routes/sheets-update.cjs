@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const GoogleSheetsService = require('../services/googleSheetsService');
+const GoogleSheetsService = require('../services/googleSheetsService.cjs');
 const axios = require('axios');
 
 let sheetsClient = null;
