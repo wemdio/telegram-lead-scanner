@@ -30,10 +30,10 @@ function getApiBaseUrl(): string {
       return `http://localhost:${port}/api`;
     }
     
-    // Для production сборки всегда используем Timeweb backend (кроме Electron)
+    // Для production сборки всегда используем относительный путь (через _redirects)
     if (isProduction) {
-      console.log('🔧 Production build detected - using Timeweb backend');
-      return 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api';
+      console.log('🔧 Production build detected - using relative API path');
+      return '/api';
     }
     
     // Check if running from file:// protocol in development (только для разработки)
