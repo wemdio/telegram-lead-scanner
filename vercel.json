@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "http://185.104.249.138:3001/api/$1"
+      "destination": "https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api/$1"
     },
     {
       "source": "/(.*)",
