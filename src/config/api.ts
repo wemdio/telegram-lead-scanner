@@ -20,6 +20,8 @@ function getApiBaseUrl(): string {
     console.log('  - electronAPI exists:', !!(window as any).electronAPI);
     console.log('  - require exists:', !!(window as any).require);
     console.log('  - process.type:', typeof (window as any).process?.type);
+    console.log('  - isProduction:', isProduction);
+    console.log('  - isDevelopment:', isDevelopment);
     
     // В Electron окружении получаем порт динамически
     if ((window as any).electronAPI) {
@@ -28,21 +30,15 @@ function getApiBaseUrl(): string {
       return `http://localhost:${port}/api`;
     }
     
-    // Для production веб-версии используем Timeweb backend
-    if (isProduction && !isElectron) {
-      console.log('🔧 Production web environment - using Timeweb backend');
+    // Для production сборки всегда используем Timeweb backend (кроме Electron)
+    if (isProduction) {
+      console.log('🔧 Production build detected - using Timeweb backend');
       return 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api';
     }
     
-    // Если мы в продакшене (развернутое приложение), используем развернутый бэкенд
-    if (isProduction && !isLocalhost) {
-      console.log('🔧 Production environment detected - using deployed backend');
-      return 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api';
-    }
-    
-    // Check if running from file:// protocol (Electron)
-    if (window.location.protocol === 'file:') {
-      console.log('🔧 Detected file:// protocol - using localhost API');
+    // Check if running from file:// protocol in development (только для разработки)
+    if (window.location.protocol === 'file:' && isDevelopment) {
+      console.log('🔧 Detected file:// protocol in development - using localhost API');
       return 'http://localhost:3001/api';
     }
     
