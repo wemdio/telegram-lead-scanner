@@ -2,7 +2,7 @@
 RewriteEngine On
 
 # Handle API proxy
-RewriteRule ^api/(.*)$ http://185.104.249.138:3001/api/$1 [P,L]
+RewriteRule ^api/(.*)$ https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api/$1 [P,L]
 
 # Handle client-side routing
 RewriteCond %{REQUEST_FILENAME} !-f
