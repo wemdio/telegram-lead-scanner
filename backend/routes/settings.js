@@ -7,6 +7,37 @@ let telegramSettings = {
   channelId: process.env.TELEGRAM_CHANNEL_ID || null
 };
 
+// Настройки Google Sheets
+let googleSheetsSettings = {
+  serviceAccountEmail: null,
+  privateKey: null,
+  spreadsheetId: null
+};
+
+// Базовый эндпоинт для получения всех настроек
+router.get('/', async (req, res) => {
+  try {
+    res.json({
+      success: true,
+      telegram: {
+        botToken: telegramSettings.botToken ? 'установлен' : null,
+        channelId: telegramSettings.channelId ? 'установлен' : null
+      },
+      googleSheets: {
+        serviceAccountEmail: googleSheetsSettings.serviceAccountEmail ? 'установлен' : null,
+        privateKey: googleSheetsSettings.privateKey ? 'установлен' : null,
+        spreadsheetId: googleSheetsSettings.spreadsheetId || null
+      }
+    });
+  } catch (error) {
+    console.error('Ошибка получения настроек:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Внутренняя ошибка сервера'
+    });
+  }
+});
+
 // Эндпоинт для сохранения настроек Telegram бота
 router.post('/telegram', async (req, res) => {
   try {
@@ -72,13 +103,6 @@ router.get('/telegram', async (req, res) => {
     });
   }
 });
-
-// Сохранение настроек Google Sheets из localStorage
-let googleSheetsSettings = {
-  serviceAccountEmail: null,
-  privateKey: null,
-  spreadsheetId: null
-};
 
 router.post('/google-sheets', (req, res) => {
   try {
