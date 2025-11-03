@@ -1,5 +1,5 @@
 # Redirect API calls to backend
-/api/* https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api/:splat 200
+/api/* https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api/:splat 200!
 
 # SPA fallback
 /* /index.html 200
