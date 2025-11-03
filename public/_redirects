@@ -1,0 +1,5 @@
+# Redirect API calls to backend
+/api/* http://185.104.249.138:3001/api/:splat 200
+
+# SPA fallback
+/* /index.html 200
