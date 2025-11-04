@@ -1,10 +1,40 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const router = express.Router();
 
+// Путь к файлу постоянных настроек (root)
+const SETTINGS_FILE = path.join(__dirname, '..', 'persistent-settings.json');
+
+function readPersistentSettings() {
+  try {
+    if (fs.existsSync(SETTINGS_FILE)) {
+      const raw = fs.readFileSync(SETTINGS_FILE, 'utf-8');
+      return JSON.parse(raw || '{}');
+    }
+  } catch (e) {
+    console.error('⚠️ Ошибка чтения persistent-settings.json:', e.message);
+  }
+  return {};
+}
+
+function writePersistentSettings(updates) {
+  try {
+    const current = readPersistentSettings();
+    const merged = { ...current, ...updates };
+    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(merged, null, 2), 'utf-8');
+    return true;
+  } catch (e) {
+    console.error('⚠️ Ошибка записи persistent-settings.json:', e.message);
+    return false;
+  }
+}
+
 // Временное хранилище настроек (в реальном приложении лучше использовать базу данных)
+const persisted = readPersistentSettings();
 let telegramSettings = {
-  botToken: process.env.TELEGRAM_BOT_TOKEN || null,
-  channelId: process.env.TELEGRAM_CHANNEL_ID || null
+  botToken: persisted.telegramBotToken || process.env.TELEGRAM_BOT_TOKEN || null,
+  channelId: persisted.telegramChannelId || process.env.TELEGRAM_CHANNEL_ID || null
 };
 
 // Эндпоинт для сохранения настроек Telegram бота
@@ -19,9 +49,15 @@ router.post('/telegram', async (req, res) => {
       });
     }
 
-    // Сохраняем настройки
+    // Сохраняем настройки в памяти
     telegramSettings.botToken = telegramBotToken;
     telegramSettings.channelId = telegramChannelId;
+
+    // Персистентно сохраняем настройки
+    const saved = writePersistentSettings({
+      telegramBotToken: telegramBotToken,
+      telegramChannelId: telegramChannelId
+    });
 
     console.log('📱 Настройки Telegram бота сохранены:', {
       botToken: telegramBotToken ? 'установлен' : 'не установлен',
@@ -30,7 +66,8 @@ router.post('/telegram', async (req, res) => {
 
     res.json({
       success: true,
-      message: 'Настройки Telegram бота сохранены'
+      message: 'Настройки Telegram бота сохранены',
+      persisted: !!saved
     });
   } catch (error) {
     console.error('Ошибка сохранения настроек Telegram бота:', error);
@@ -44,25 +81,19 @@ router.post('/telegram', async (req, res) => {
 // Эндпоинт для получения настроек Telegram бота
 router.get('/telegram', async (req, res) => {
   try {
-    console.log('🔍 Запрос настроек Telegram бота:', {
-      botToken: telegramSettings.botToken ? 'установлен' : 'не установлен',
-      channelId: telegramSettings.channelId ? 'установлен' : 'не установлен'
-    });
+    const persistedNow = readPersistentSettings();
+    const botToken = persistedNow.telegramBotToken || telegramSettings.botToken || null;
+    const channelId = persistedNow.telegramChannelId || telegramSettings.channelId || null;
 
-    // Если настройки не установлены, возвращаем пустые значения
-    if (!telegramSettings.botToken || !telegramSettings.channelId) {
-      console.log('⚠️ Настройки Telegram бота не найдены');
-      return res.json({
-        success: true,
-        botToken: null,
-        channelId: null
-      });
-    }
+    console.log('🔍 Запрос настроек Telegram бота:', {
+      botToken: botToken ? 'установлен' : 'не установлен',
+      channelId: channelId ? 'установлен' : 'не установлен'
+    });
 
     res.json({
       success: true,
-      botToken: telegramSettings.botToken,
-      channelId: telegramSettings.channelId
+      botToken,
+      channelId
     });
   } catch (error) {
     console.error('Ошибка получения настроек Telegram бота:', error);

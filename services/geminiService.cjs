@@ -72,7 +72,7 @@ class OpenRouterService {
               content: prompt
             }
           ],
-          temperature: 0.1,
+          temperature: 0.5,
           max_tokens: 4000
         })
       });
