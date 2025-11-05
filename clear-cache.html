@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Очистка кэша и localStorage</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+        h1 {
+            color: #60a5fa;
+        }
+        .section {
+            background: #1e293b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        button.danger {
+            background: #ef4444;
+        }
+        button.danger:hover {
+            background: #dc2626;
+        }
+        button.success {
+            background: #10b981;
+        }
+        button.success:hover {
+            background: #059669;
+        }
+        .output {
+            background: #020617;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .success {
+            color: #10b981;
+        }
+        .error {
+            color: #ef4444;
+        }
+        .info {
+            color: #60a5fa;
+        }
+        .warning {
+            color: #f59e0b;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧹 Очистка кэша и localStorage</h1>
+    
+    <div class="section">
+        <h2>📊 Текущие данные в localStorage</h2>
+        <button onclick="showLocalStorage()">Показать содержимое</button>
+        <div id="localStorageOutput" class="output"></div>
+    </div>
+
+    <div class="section">
+        <h2>🗑️ Очистка</h2>
+        <button class="danger" onclick="clearLocalStorage()">Очистить localStorage</button>
+        <button class="danger" onclick="clearCookies()">Очистить cookies</button>
+        <button class="danger" onclick="clearAll()">Очистить всё</button>
+        <button class="success" onclick="reloadPage()">Перезагрузить страницу</button>
+        <div id="clearOutput" class="output"></div>
+    </div>
+
+    <div class="section">
+        <h2>🔧 Проверка API</h2>
+        <button onclick="testAPI()">Тест API подключения</button>
+        <div id="apiOutput" class="output"></div>
+    </div>
+
+    <script>
+        function log(message, type = 'info', outputId = 'clearOutput') {
+            const output = document.getElementById(outputId);
+            const timestamp = new Date().toLocaleTimeString();
+            output.innerHTML += `<div class="${type}">[${timestamp}] ${message}</div>`;
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function showLocalStorage() {
+            const output = document.getElementById('localStorageOutput');
+            output.innerHTML = '';
+            
+            log('📦 Содержимое localStorage:', 'info', 'localStorageOutput');
+            
+            if (localStorage.length === 0) {
+                log('localStorage пуст', 'warning', 'localStorageOutput');
+                return;
+            }
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                
+                // Попытка распарсить JSON для красивого вывода
+                try {
+                    const parsed = JSON.parse(value);
+                    log(`${key}: ${JSON.stringify(parsed, null, 2)}`, 'info', 'localStorageOutput');
+                } catch {
+                    log(`${key}: ${value}`, 'info', 'localStorageOutput');
+                }
+            }
+        }
+
+        function clearLocalStorage() {
+            const output = document.getElementById('clearOutput');
+            output.innerHTML = '';
+            
+            const itemCount = localStorage.length;
+            log(`🗑️ Очистка localStorage (найдено ${itemCount} элементов)...`, 'warning');
+            
+            try {
+                localStorage.clear();
+                log('✅ localStorage успешно очищен!', 'success');
+                log(`Удалено элементов: ${itemCount}`, 'info');
+            } catch (error) {
+                log(`❌ Ошибка при очистке localStorage: ${error.message}`, 'error');
+            }
+        }
+
+        function clearCookies() {
+            const output = document.getElementById('clearOutput');
+            output.innerHTML = '';
+            
+            log('🍪 Очистка cookies...', 'warning');
+            
+            try {
+                const cookies = document.cookie.split(";");
+                let count = 0;
+                
+                for (let cookie of cookies) {
+                    const eqPos = cookie.indexOf("=");
+                    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+                    count++;
+                }
+                
+                log(`✅ Cookies успешно очищены!`, 'success');
+                log(`Удалено cookies: ${count}`, 'info');
+            } catch (error) {
+                log(`❌ Ошибка при очистке cookies: ${error.message}`, 'error');
+            }
+        }
+
+        function clearAll() {
+            const output = document.getElementById('clearOutput');
+            output.innerHTML = '';
+            
+            log('🧹 Полная очистка всех данных...', 'warning');
+            
+            // Очистка localStorage
+            try {
+                const localStorageCount = localStorage.length;
+                localStorage.clear();
+                log(`✅ localStorage очищен (${localStorageCount} элементов)`, 'success');
+            } catch (error) {
+                log(`❌ Ошибка при очистке localStorage: ${error.message}`, 'error');
+            }
+            
+            // Очистка sessionStorage
+            try {
+                const sessionStorageCount = sessionStorage.length;
+                sessionStorage.clear();
+                log(`✅ sessionStorage очищен (${sessionStorageCount} элементов)`, 'success');
+            } catch (error) {
+                log(`❌ Ошибка при очистке sessionStorage: ${error.message}`, 'error');
+            }
+            
+            // Очистка cookies
+            try {
+                const cookies = document.cookie.split(";");
+                for (let cookie of cookies) {
+                    const eqPos = cookie.indexOf("=");
+                    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+                }
+                log(`✅ Cookies очищены (${cookies.length} элементов)`, 'success');
+            } catch (error) {
+                log(`❌ Ошибка при очистке cookies: ${error.message}`, 'error');
+            }
+            
+            // Очистка IndexedDB (если используется)
+            if (window.indexedDB) {
+                try {
+                    indexedDB.databases().then(databases => {
+                        databases.forEach(db => {
+                            indexedDB.deleteDatabase(db.name);
+                            log(`✅ IndexedDB "${db.name}" удалена`, 'success');
+                        });
+                    });
+                } catch (error) {
+                    log(`⚠️ IndexedDB: ${error.message}`, 'warning');
+                }
+            }
+            
+            log('', 'info');
+            log('🎉 Все данные успешно очищены!', 'success');
+            log('Рекомендуется перезагрузить страницу (Ctrl+Shift+R)', 'info');
+        }
+
+        async function testAPI() {
+            const output = document.getElementById('apiOutput');
+            output.innerHTML = '';
+            
+            log('🔌 Проверка подключения к API...', 'info', 'apiOutput');
+            
+            // Определяем базовый URL API
+            const isTimeweb = window.location.hostname.includes('twc1.net');
+            const baseURL = isTimeweb 
+                ? 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api'
+                : '/api';
+            
+            log(`📍 URL: ${baseURL}`, 'info', 'apiOutput');
+            log(`🌐 Hostname: ${window.location.hostname}`, 'info', 'apiOutput');
+            log(``, 'info', 'apiOutput');
+            
+            try {
+                log('🔄 Запрос к /scanner/status...', 'info', 'apiOutput');
+                const response = await fetch(`${baseURL}/scanner/status`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                log(`📊 Статус ответа: ${response.status} ${response.statusText}`, 
+                    response.ok ? 'success' : 'error', 'apiOutput');
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log('✅ API работает корректно!', 'success', 'apiOutput');
+                    log(`Данные: ${JSON.stringify(data, null, 2)}`, 'info', 'apiOutput');
+                } else {
+                    log(`❌ API вернул ошибку: ${response.statusText}`, 'error', 'apiOutput');
+                }
+            } catch (error) {
+                log(`❌ Ошибка подключения к API: ${error.message}`, 'error', 'apiOutput');
+                log('Возможные причины:', 'warning', 'apiOutput');
+                log('- Бэкенд не запущен', 'info', 'apiOutput');
+                log('- Неверный URL в конфигурации', 'info', 'apiOutput');
+                log('- CORS проблемы', 'info', 'apiOutput');
+            }
+        }
+
+        function reloadPage() {
+            log('🔄 Перезагрузка страницы...', 'info');
+            setTimeout(() => {
+                location.reload(true);
+            }, 500);
+        }
+
+        // Автоматически показать содержимое при загрузке
+        window.addEventListener('load', () => {
+            showLocalStorage();
+        });
+    </script>
+</body>
+</html>
+

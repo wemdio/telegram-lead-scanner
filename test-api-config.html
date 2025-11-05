@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Config Test</title>
+</head>
+<body>
+    <h1>API Configuration Test</h1>
+    <div id="results"></div>
+
+    <script>
+        // Копируем логику из api.ts
+        function getApiConfig() {
+            const isTimeweb = window.location.hostname.includes('twc1.net');
+            const baseURL = isTimeweb 
+                ? 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api'
+                : '/api';
+            
+            return {
+                baseURL,
+                isTimeweb,
+                hostname: window.location.hostname,
+                fullUrl: window.location.href
+            };
+        }
+
+        async function testApiConfig() {
+            const resultsDiv = document.getElementById('results');
+            const config = getApiConfig();
+            
+            resultsDiv.innerHTML = `
+                <h2>Configuration:</h2>
+                <p><strong>Hostname:</strong> ${config.hostname}</p>
+                <p><strong>Full URL:</strong> ${config.fullUrl}</p>
+                <p><strong>Is Timeweb:</strong> ${config.isTimeweb}</p>
+                <p><strong>API Base URL:</strong> ${config.baseURL}</p>
+                
+                <h2>Testing API Call:</h2>
+                <p>Testing: ${config.baseURL}/scanner/status</p>
+            `;
+            
+            try {
+                const response = await fetch(config.baseURL + '/scanner/status');
+                const data = await response.json();
+                
+                resultsDiv.innerHTML += `
+                    <p><strong>Status:</strong> ${response.status}</p>
+                    <p><strong>Response:</strong></p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultsDiv.innerHTML += `
+                    <p><strong>Error:</strong> ${error.message}</p>
+                `;
+            }
+        }
+
+        // Запускаем тест при загрузке страницы
+        window.onload = testApiConfig;
+    </script>
+</body>
+</html>

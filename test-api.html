@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <button onclick="testAPI()">Test API</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                // Определяем базовый URL API
+                const isTimeweb = window.location.hostname.includes('twc1.net');
+                const baseURL = isTimeweb 
+                    ? 'https://wemdio-telegram-lead-scanner-backend-fd06.twc1.net/api'
+                    : '/api';
+                
+                console.log('Using API URL:', baseURL);
+                resultDiv.innerHTML += '<br>Using API URL: ' + baseURL;
+                
+                const response = await fetch(baseURL + '/scanner/status');
+                console.log('Response status:', response.status);
+                resultDiv.innerHTML += '<br>Response status: ' + response.status;
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Response data:', data);
+                    resultDiv.innerHTML += '<br>Response data: ' + JSON.stringify(data, null, 2);
+                } else {
+                    resultDiv.innerHTML += '<br>Error: ' + response.statusText;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.innerHTML += '<br>Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

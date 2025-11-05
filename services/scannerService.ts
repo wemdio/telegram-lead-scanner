@@ -1,8 +1,6 @@
 import telegramService, { TelegramConfig, TelegramMessage } from './telegramService';
 import googleSheetsService, { GoogleSheetsConfig, MessageRow } from './googleSheetsService';
-
-// Используем относительный путь для API, который будет проксироваться через Vite
-const API_BASE_URL = '/api';
+import { API_BASE_URL } from '../src/config/api';
 
 export interface ScannerConfig {
   telegram: TelegramConfig;
