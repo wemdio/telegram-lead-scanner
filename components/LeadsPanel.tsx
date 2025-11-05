@@ -583,7 +583,7 @@ const LeadsPanel: React.FC<LeadsPanelProps> = ({ settings, onSettingsChange }) =
     try {
       const { API_ENDPOINTS, apiRequest } = await import('../src/config/api');
       
-      const result = await apiRequest('/api/telegram-bot/test', {
+      const result = await apiRequest(API_ENDPOINTS.telegramBot.test, {
         method: 'POST',
         body: JSON.stringify({
           botToken,
@@ -629,8 +629,8 @@ const LeadsPanel: React.FC<LeadsPanelProps> = ({ settings, onSettingsChange }) =
     try {
       const { API_ENDPOINTS, apiRequest } = await import('../src/config/api');
       
-      console.log('📡 Отправка запроса на /api/telegram-bot/send-lead-notification...');
-      const result = await apiRequest('/api/telegram-bot/send-lead-notification', {
+      console.log('📡 Отправка запроса на telegram-bot/send-lead-notification...');
+      const result = await apiRequest(API_ENDPOINTS.telegramBot.sendLeadNotification, {
         method: 'POST',
         body: JSON.stringify({
           botToken,

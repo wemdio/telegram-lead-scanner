@@ -160,6 +160,12 @@ export const API_ENDPOINTS = {
   settings: {
     googleSheets: `${API_BASE_URL}/settings/google-sheets`,
     telegram: `${API_BASE_URL}/settings/telegram`
+  },
+
+  // Telegram Bot endpoints (для пересылки лидов)
+  telegramBot: {
+    test: `${API_BASE_URL}/telegram-bot/test`,
+    sendLeadNotification: `${API_BASE_URL}/telegram-bot/send-lead-notification`
   }
 };
 
